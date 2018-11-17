@@ -6,13 +6,4 @@
       <class name="com.lala.test.RunTest"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.lala.test.RunTest">
-        <methods>
-          <include name="verifyDriveToComplete"/>
-        </methods>
-      </class> <!-- com.lala.test.RunTest -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

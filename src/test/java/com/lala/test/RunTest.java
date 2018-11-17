@@ -92,7 +92,7 @@ public class RunTest {
 	
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=-1, enabled=true)
+		@Test(priority=-1, enabled=false)
 		public void verifyDriveToComplete(){
 			
 			OrderID="4";
@@ -106,6 +106,33 @@ public class RunTest {
 			 
 			// request.body(requestParams.toJSONString());
 			 Response response = put("/complete");
+			 
+			 int statusCode = response.getStatusCode();
+			 System.out.println("Status Code is: "+statusCode);
+			 Assert.assertEquals(statusCode, 200);
+			
+			 String msgBody= response.body().asString();
+			 System.out.println("Message Body: "+msgBody);
+			
+			
+			
+	
+		}/*--END OF METHOD---*/
+		
+		@Test(priority=-1, enabled=true)
+		public void verifyCancelOrder(){
+			
+			OrderID="6";
+			RestAssured.baseURI=baseURL+OrderID;
+			
+			JSONObject requestParams = new JSONObject();
+			 requestParams.put("id", OrderID); // Cast
+			 requestParams.put("status", "CANCELLED");
+			 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
+			
+			 
+			// request.body(requestParams.toJSONString());
+			 Response response = put("/cancel");
 			 
 			 int statusCode = response.getStatusCode();
 			 System.out.println("Status Code is: "+statusCode);
