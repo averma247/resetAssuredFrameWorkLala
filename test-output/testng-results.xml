@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1690" started-at="2018-11-17T11:18:03Z" finished-at="2018-11-17T11:18:04Z">
+  <suite name="Default suite" duration-ms="1665" started-at="2018-11-17T12:33:43Z" finished-at="2018-11-17T12:33:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1690" started-at="2018-11-17T11:18:03Z" finished-at="2018-11-17T11:18:04Z">
+    <test name="Default test" duration-ms="1665" started-at="2018-11-17T12:33:43Z" finished-at="2018-11-17T12:33:45Z">
       <class name="com.lala.test.RunTest">
-        <test-method status="PASS" signature="verifyCancelOrder()[pri:-1, instance:com.lala.test.RunTest@643b1d11]" name="verifyCancelOrder" duration-ms="1668" started-at="2018-11-17T16:48:03Z" finished-at="2018-11-17T16:48:04Z">
+        <test-method status="PASS" signature="verifyPlaceOrder()[pri:1, instance:com.lala.test.RunTest@643b1d11]" name="verifyPlaceOrder" duration-ms="1635" started-at="2018-11-17T18:03:43Z" finished-at="2018-11-17T18:03:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCancelOrder -->
+        </test-method> <!-- verifyPlaceOrder -->
       </class> <!-- com.lala.test.RunTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

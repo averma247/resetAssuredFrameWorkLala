@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import com.lala.test.requests.CreateJSONPayLoad;
 
 
 /**
@@ -32,16 +33,26 @@ public class RunTest {
 	
 	String OrderID;
 		
-		//@Test(priority=1)
+		@Test(priority=1, enabled=true)
 		public void verifyPlaceOrder(){
 			
-			RestAssured.baseURI = baseURL;
+			RestAssured.baseURI="http://localhost:51544/v1/orders";
+			
 			RequestSpecification request = RestAssured.given();
+			 
+			 JSONObject requestParams = CreateJSONPayLoad.createJSONPayloadNewOrder();
+			 request.body(requestParams.toJSONString());
+			 Response response = request.post("");
+			 
+			 int statusCode = response.getStatusCode();
+			 Assert.assertEquals(statusCode, 201);
+//			 String successCode = response.jsonPath().get("SuccessCode");
+//			 Assert.assertEquals( "Correct Success code was returned", successCode, "OPERATION_SUCCESS");
+			 
+			 String msgBody= response.body().asString();
+			 System.out.println("Message Body: "+msgBody);
 			
-			
-			
-			
-			
+						
 		}/*-- END OF METHOD --*/
 		
 		@Test(priority=1, enabled=false)
@@ -119,7 +130,7 @@ public class RunTest {
 	
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=-1, enabled=true)
+		@Test(priority=-1, enabled=false)
 		public void verifyCancelOrder(){
 			
 			OrderID="6";
@@ -145,6 +156,11 @@ public class RunTest {
 			
 	
 		}/*--END OF METHOD---*/
+		
+		
+		
+		
+		
 		
 	
 }/*--END OF CLASS---*/
