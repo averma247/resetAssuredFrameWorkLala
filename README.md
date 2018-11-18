@@ -21,13 +21,13 @@ $ curl -X GET -H "Content-Type: application/json; charset=utf-8" http://localhos
 ```
 # Below are the steps to Setup and Execute the Frame Work.
   1. Create a new folder in your local drive.
-  2. Go to that folder in your terminal. 
-  3. Execute below git command(Assuming you have already installed GIT).
+  1. Go to that folder in your terminal. 
+  1. Execute below git command(Assuming you have already installed GIT).
         git clone https://github.com/averma247/resetAssuredFrameWorkLala.git
-  4. Once maven project is cloned in your local open Eclipse and open the Maven project using "Open Projects from File              System."
-  5. Once the project is imported, it will download all the required dependecies related to RESTful API, JSON and TestNG.
-  6. Now go to Eclipse Market Place and install TestNG plugin.
-  7. Once the plugin is installed. Restart the Eclispe.
-  8. Now open RunTest.java and select Run As-> TestNG Test.
-  9. All the Test Cases will execute. 
+  1. Once maven project is cloned in your local open Eclipse and open the Maven project using "Open Projects from File              System."
+  1. Once the project is imported, it will download all the required dependecies related to RESTful API, JSON and TestNG.
+  1. Now go to Eclipse Market Place and install TestNG plugin.
+  1. Once the plugin is installed. Restart the Eclispe.
+  1. Now open RunTest.java and select Run As-> TestNG Test.
+  1. All the Test Cases will execute. 
   
