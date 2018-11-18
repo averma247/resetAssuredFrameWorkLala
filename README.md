@@ -8,8 +8,8 @@ Rest Assured Framework for automating simple REST API flows.
   4. TestNG plugin in Eclipse.
   
 # How to run the above API on your local machine
-You will need to have docker installed (reference: https://docs.docker.com/install/)
-Assuming you are under MacOS, type the following commands (It will be very similar on Linux/Unix OS(es)):
+1. You will need to have docker installed (reference: https://docs.docker.com/install/)
+1. Assuming you are under MacOS, type the following commands (It will be very similar on Linux/Unix OS(es)):
 $ docker network create lalamove-sample-api || true
 $ docker rm -f lalamove-sample-api-db
 $ docker run -d --net=lalamove-sample-api --name lalamove-sample-api-db lalamove/lalamove-sample-api-db:1.0
