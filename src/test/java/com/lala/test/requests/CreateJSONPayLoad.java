@@ -6,6 +6,11 @@ import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
 public class CreateJSONPayLoad {
 	
 	public static JSONObject createJSONPayloadNewOrder(){
@@ -45,5 +50,14 @@ public class CreateJSONPayLoad {
 		
 	}
 	
+	public static void main(String args[]){
+		
+		//JSONObject json= createJSONPayloadNewOrder();
+		RequestSpecification httpRequest = RestAssured.given();
+		Response response = httpRequest.get("http://localhost:51544/v1/orders/1");
+		JsonPath jsonPathEvaluator = response.jsonPath();
+		System.out.println("Order ID from Response " + jsonPathEvaluator.prettyPrint());
+		
+	}
 	
 }

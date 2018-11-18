@@ -41,7 +41,7 @@ public class RunTest {
 	
 	String OrderID;
 		
-		@Test(priority=1, enabled=false)
+		@Test(priority=1, enabled=true)
 		public void verifyPlaceOrder(){
 			
 			System.out.println("Verfying New Order Flow with Valid Data.");
@@ -69,13 +69,21 @@ public class RunTest {
 						
 		}/*-- END OF METHOD --*/
 		
-		@Test(priority=2, enabled=false)
+		@Test(priority=2, enabled=true)
 		public void verifyFetchOrderWhenOrderExist(){
 						
 			try{
 				
 				System.out.println("Verfying Fetch Order Flow.");
-				String OrderID="1";
+				
+				int orderPlacedStatus=placeorder.placeOrder();
+				if(orderPlacedStatus==0){
+					System.out.println("Error while placing order, Try placing order manually.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Try placing order manually.");				
+				}
+				
+				String OrderID=GlobalData.NewOrderID;
 				System.out.println("Order ID is: "+ OrderID);
 				int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
 				if(actualStatusCode!=0){
@@ -102,7 +110,7 @@ public class RunTest {
 			
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=3, enabled=false)
+		@Test(priority=3, enabled=true)
 		public void verifyFetchOrderWhenOrderDoesNotExist(){
 			
 			try{
@@ -131,13 +139,21 @@ public class RunTest {
 			
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=4, enabled=false)
+		@Test(priority=4, enabled=true)
 		public void verifyDriveToTakeOrder(){
 			
 			try{
 				
 				System.out.println("Verfying Drive to take Order, Order is assiging state.");
-				String OrderID="2";
+				
+				int orderPlacedStatus=placeorder.placeOrder();
+				if(orderPlacedStatus==0){
+					System.out.println("Error while placing order, Try placing order manually.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Try placing order manually.");				
+				}
+				
+				String OrderID=GlobalData.NewOrderID;
 				System.out.println("Order ID is: "+ OrderID);
 				int actualStatusCode=drivetotakeorder.driveToTakeOrderRequest(OrderID);
 				if(actualStatusCode!=0){
@@ -171,7 +187,23 @@ public class RunTest {
 			try{
 				
 				System.out.println("Verifying Order state to Complete, Order is assiging state.");
-				String OrderID="2";
+				
+				int orderPlacedStatus=placeorder.placeOrder();
+				if(orderPlacedStatus==0){
+					System.out.println("Error while placing order, Try placing order manually.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Try placing order manually.");				
+				}
+				
+				String OrderID=GlobalData.NewOrderID;
+				
+				int orderTakeAwayStatus=drivetotakeorder.driveToTakeOrderRequest(OrderID);
+				if(orderTakeAwayStatus==0){
+					System.out.println("Error while placing order, Try doing manually.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Try doing manually.");						
+				}
+				
 				System.out.println("Order ID is: "+ OrderID);
 				int actualStatusCode=drivetocomplete.driveToCompleteRequest(OrderID);
 				if(actualStatusCode!=0){
@@ -197,13 +229,21 @@ public class RunTest {
 			
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=6, enabled=false)
+		@Test(priority=6, enabled=true)
 		public void verifyCancelOrder(){
 		
 			try{
 				
 				System.out.println("Verifying Order state to Complete, Order is assiging state.");
-				String OrderID="3";
+				
+				int orderPlacedStatus=placeorder.placeOrder();
+				if(orderPlacedStatus==0){
+					System.out.println("Error while placing order, Try placing order manually.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Try placing order manually.");				
+				}
+				
+				String OrderID=GlobalData.NewOrderID;
 				System.out.println("Order ID is: "+ OrderID);
 				int actualStatusCode=cancelorder.cancelOrderRequest(OrderID);
 				if(actualStatusCode!=0){

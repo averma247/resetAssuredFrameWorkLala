@@ -3,7 +3,10 @@ package com.lala.test.requests;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 
+import com.lala.test.GlobalData;
+
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -13,20 +16,25 @@ public class PlaceOrder {
 	
 	public int placeOrder(){
 		try { 
-			RestAssured.baseURI="http://localhost:51544/v1/orders";
+			
+		 RestAssured.baseURI="http://localhost:51544/v1/orders";
 		
 //		
-		RequestSpecification request = RestAssured.given();
+		 RequestSpecification request = RestAssured.given();
 		 
 		 JSONObject requestParams = CreateJSONPayLoad.createJSONPayloadNewOrder();
 		 request.body(requestParams.toJSONString());
-		  response = request.post("");
+		 response = request.post("");
 		 
 		 int statusCode = response.getStatusCode();
 		 System.out.println("Status Code is: "+statusCode);
 		 String msgBody= response.body().asString();
 		 System.out.println("Message Body: "+msgBody);
 		 
+		 JsonPath jsonPathEvaluator = response.jsonPath();
+		 System.out.println("Order ID from Response " + jsonPathEvaluator.get("id"));
+		 GlobalData.NewOrderID=(jsonPathEvaluator.get("id")).toString();
+		 System.out.println("Response Data " + jsonPathEvaluator.prettyPrint());
 		 return statusCode;
 		 
 		}
