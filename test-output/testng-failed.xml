@@ -6,4 +6,13 @@
       <class name="com.lala.test.RunTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.lala.test.RunTest">
+        <methods>
+          <include name="verifyFetchOrderWhenOrderDoesNotExist"/>
+        </methods>
+      </class> <!-- com.lala.test.RunTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

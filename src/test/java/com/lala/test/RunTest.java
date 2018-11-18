@@ -120,7 +120,7 @@ public class RunTest {
 				System.out.println("Order ID is: "+ OrderID);
 				int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
 				if(actualStatusCode!=0){
-					fetchorder.verifyStatusCode(actualStatusCode, 404);					
+					fetchorder.verifyStatusCode(actualStatusCode, 405);					
 				}
 				else{
 					
