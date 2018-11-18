@@ -13,21 +13,21 @@ public class CreateJSONPayLoad {
 		JSONObject stops= new JSONObject();
 		JSONArray latlongList= new JSONArray();
 		
-		Map latLong= new LinkedHashMap(2);
+		Map<String, Double> latLong= new LinkedHashMap<String, Double>(2);
 		
 		latLong.put("lat",22.344674);
 		latLong.put("lng",114.124651);
 		
 		latlongList.add(latLong); 
 		
-		latLong= new LinkedHashMap(2);
+		latLong= new LinkedHashMap<String, Double>(2);
 		
 		latLong.put("lat",22.375384);
 		latLong.put("lng",114.182446);
 		
 		latlongList.add(latLong); 
 		
-		latLong= new LinkedHashMap(2);
+		latLong= new LinkedHashMap<String, Double>(2);
 		
 		latLong.put("lat",22.385669);
 		latLong.put("lng",114.186962);

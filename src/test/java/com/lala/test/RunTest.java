@@ -3,15 +3,18 @@ package com.lala.test;
 import static io.restassured.RestAssured.*;
 import static com.lala.test.GlobalData.*;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.lala.test.requests.CancelOrder;
+import com.lala.test.requests.DriveToCompleteOrder;
+import com.lala.test.requests.DriveToTakeOrder;
+import com.lala.test.requests.FetchOrder;
+import com.lala.test.requests.PlaceOrder;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import com.lala.test.requests.CreateJSONPayLoad;
 
 
 /**
@@ -30,138 +33,202 @@ import com.lala.test.requests.CreateJSONPayLoad;
 
 public class RunTest {
 	
+	PlaceOrder placeorder=new PlaceOrder();
+	FetchOrder fetchorder= new FetchOrder();
+	DriveToTakeOrder drivetotakeorder= new DriveToTakeOrder();
+	DriveToCompleteOrder drivetocomplete=new DriveToCompleteOrder();
+	CancelOrder cancelorder=new CancelOrder();
 	
 	String OrderID;
 		
-		@Test(priority=1, enabled=true)
+		@Test(priority=1, enabled=false)
 		public void verifyPlaceOrder(){
 			
-			RestAssured.baseURI="http://localhost:51544/v1/orders";
+			System.out.println("Verfying New Order Flow with Valid Data.");
+			try{
+				
+				int actualStatusCode=placeorder.placeOrder();
+				if(actualStatusCode!=0){
+					placeorder.verifyStatusCode(actualStatusCode, 201);					
+				}
+				else{
+					
+					System.out.println("Error while placing order, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Error while placing order, please check server connection.");
+				}
+				
+				System.out.println("Test is passed.");
+			}
 			
-			RequestSpecification request = RestAssured.given();
-			 
-			 JSONObject requestParams = CreateJSONPayLoad.createJSONPayloadNewOrder();
-			 request.body(requestParams.toJSONString());
-			 Response response = request.post("");
-			 
-			 int statusCode = response.getStatusCode();
-			 Assert.assertEquals(statusCode, 201);
-//			 String successCode = response.jsonPath().get("SuccessCode");
-//			 Assert.assertEquals( "Correct Success code was returned", successCode, "OPERATION_SUCCESS");
-			 
-			 String msgBody= response.body().asString();
-			 System.out.println("Message Body: "+msgBody);
-			
+			catch(Exception e){
+				
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+			}
 						
 		}/*-- END OF METHOD --*/
 		
-		@Test(priority=1, enabled=false)
+		@Test(priority=2, enabled=false)
 		public void verifyFetchOrderWhenOrderExist(){
+						
+			try{
+				
+				System.out.println("Verfying Fetch Order Flow.");
+				String OrderID="1";
+				System.out.println("Order ID is: "+ OrderID);
+				int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
+				if(actualStatusCode!=0){
+					fetchorder.verifyStatusCode(actualStatusCode, 200);					
+				}
+				else{
+					
+					System.out.println("Error while fetching the order details, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Error while fetching the order details, please check server connection.");
+				}
+				
+				System.out.println("Test is Passed.");
+				
+			}catch(Exception e){
+				
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+			}
 			
-			OrderID="1";
-			Response resp = get(baseURL+OrderID);
 			
-			int code=resp.getStatusCode();
 			
-			System.out.println("Status Code is: "+code);
-			Assert.assertEquals(code, 200);
+			
+			
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=2, enabled=false)
+		@Test(priority=3, enabled=false)
 		public void verifyFetchOrderWhenOrderDoesNotExist(){
 			
-			OrderID="10";
-			Response resp = get(baseURL+OrderID);
+			try{
+				
+				System.out.println("Verfying Fetch Order Flow for non existing order.");
+				String OrderID="-1";
+				System.out.println("Order ID is: "+ OrderID);
+				int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
+				if(actualStatusCode!=0){
+					fetchorder.verifyStatusCode(actualStatusCode, 404);					
+				}
+				else{
+					
+					System.out.println("Error while fetching the order details, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Error while fetching the order details, please check server connection.");
+				}
+				
+				System.out.println("Test is Passed.");
+				
+			}catch(Exception e){
+				
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+			}
 			
-			int code=resp.getStatusCode();
-			
-			System.out.println("Status Code is: "+code);
-			Assert.assertEquals(code, 404);
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=-1, enabled=false)
+		@Test(priority=4, enabled=false)
 		public void verifyDriveToTakeOrder(){
 			
-			OrderID="4";
-			RestAssured.baseURI=baseURL+OrderID;
-			
-			JSONObject requestParams = new JSONObject();
-			 requestParams.put("id", OrderID); // Cast
-			 requestParams.put("status", "ONGOING");
-			 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
-			
-			 
-			// request.body(requestParams.toJSONString());
-			 Response response = put("/take");
-			 
-			 int statusCode = response.getStatusCode();
-			 System.out.println("Status Code is: "+statusCode);
-			 Assert.assertEquals(statusCode, 404);
+			try{
+				
+				System.out.println("Verfying Drive to take Order, Order is assiging state.");
+				String OrderID="2";
+				System.out.println("Order ID is: "+ OrderID);
+				int actualStatusCode=drivetotakeorder.driveToTakeOrderRequest(OrderID);
+				if(actualStatusCode!=0){
+					drivetotakeorder.verifyStatusCode(actualStatusCode, 200);					
+				}
+				else{
+					
+					System.out.println("Error while fetching the order details, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Error while fetching the order details, please check server connection.");
+				}
+				
+				System.out.println("Test is Passed.");
+				
+				
+				
+			}catch(Exception e){
+
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+			}
 			
 			
 			
 	
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=-1, enabled=false)
+		@Test(priority=5, enabled=true)
 		public void verifyDriveToComplete(){
 			
-			OrderID="4";
-			RestAssured.baseURI=baseURL+OrderID;
+			try{
+				
+				System.out.println("Verifying Order state to Complete, Order is assiging state.");
+				String OrderID="2";
+				System.out.println("Order ID is: "+ OrderID);
+				int actualStatusCode=drivetocomplete.driveToCompleteRequest(OrderID);
+				if(actualStatusCode!=0){
+					drivetotakeorder.verifyStatusCode(actualStatusCode, 200);					
+				}
+				else{
+					
+					System.out.println("Error while fetching the order details, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Error while fetching the order details, please check server connection.");
+				}
+				
+				System.out.println("Test is Passed.");
+				
+				
+				
+			}catch(Exception e){
+
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+			}
 			
-			JSONObject requestParams = new JSONObject();
-			 requestParams.put("id", OrderID); // Cast
-			 requestParams.put("status", "COMPLETED");
-			 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
 			
-			 
-			// request.body(requestParams.toJSONString());
-			 Response response = put("/complete");
-			 
-			 int statusCode = response.getStatusCode();
-			 System.out.println("Status Code is: "+statusCode);
-			 Assert.assertEquals(statusCode, 200);
-			
-			 String msgBody= response.body().asString();
-			 System.out.println("Message Body: "+msgBody);
-			
-			
-			
-	
 		}/*--END OF METHOD---*/
 		
-		@Test(priority=-1, enabled=false)
+		@Test(priority=6, enabled=false)
 		public void verifyCancelOrder(){
-			
-			OrderID="6";
-			RestAssured.baseURI=baseURL+OrderID;
-			
-			JSONObject requestParams = new JSONObject();
-			 requestParams.put("id", OrderID); // Cast
-			 requestParams.put("status", "CANCELLED");
-			 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
-			
-			 
-			// request.body(requestParams.toJSONString());
-			 Response response = put("/cancel");
-			 
-			 int statusCode = response.getStatusCode();
-			 System.out.println("Status Code is: "+statusCode);
-			 Assert.assertEquals(statusCode, 200);
-			
-			 String msgBody= response.body().asString();
-			 System.out.println("Message Body: "+msgBody);
-			
-			
+		
+			try{
+				
+				System.out.println("Verifying Order state to Complete, Order is assiging state.");
+				String OrderID="3";
+				System.out.println("Order ID is: "+ OrderID);
+				int actualStatusCode=cancelorder.cancelOrderRequest(OrderID);
+				if(actualStatusCode!=0){
+					cancelorder.verifyStatusCode(actualStatusCode, 200);					
+				}
+				else{
+					
+					System.out.println("Error while fetching the order details, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Error while fetching the order details, please check server connection.");
+				}
+				
+				System.out.println("Test is Passed.");
+				
+				
+				
+			}catch(Exception e){
+
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+			}
 			
 	
 		}/*--END OF METHOD---*/
-		
-		
-		
-		
-		
-		
+	
 	
 }/*--END OF CLASS---*/
 
