@@ -5,14 +5,17 @@ import static io.restassured.RestAssured.get;
 
 import org.testng.Assert;
 
+import com.lala.test.GlobalData;
+
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class FetchOrder {
 
 	public static int fetchOrderRequest(String OrderID){
 		System.out.println("Sending Request to fetch the order detials.");
-		
-		Response resp = get(baseURL+OrderID);		
+		RestAssured.baseURI=GlobalData.baseURL;
+		Response resp = get("/v1/orders/"+OrderID);		
 		return resp.getStatusCode();
 		
 	}

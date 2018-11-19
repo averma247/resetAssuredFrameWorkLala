@@ -1,6 +1,7 @@
 package com.lala.test.requests;
 
 import org.json.simple.JSONObject;
+import com.lala.test.GlobalData;
 import org.testng.Assert;
 
 import com.lala.test.GlobalData;
@@ -17,14 +18,14 @@ public class PlaceOrder {
 	public int placeOrder(){
 		try { 
 			
-		 RestAssured.baseURI="http://localhost:51544/v1/orders";
+		 RestAssured.baseURI=GlobalData.baseURL;
 		
 //		
 		 RequestSpecification request = RestAssured.given();
 		 
 		 JSONObject requestParams = CreateJSONPayLoad.createJSONPayloadNewOrder();
 		 request.body(requestParams.toJSONString());
-		 response = request.post("");
+		 response = request.post("/v1/orders");
 		 
 		 int statusCode = response.getStatusCode();
 		 System.out.println("Status Code is: "+statusCode);

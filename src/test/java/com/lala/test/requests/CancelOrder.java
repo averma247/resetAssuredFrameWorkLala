@@ -6,6 +6,8 @@ import static io.restassured.RestAssured.put;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 
+import com.lala.test.GlobalData;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -14,7 +16,7 @@ public class CancelOrder {
 	
 	public int cancelOrderRequest(String OrderID){
 
-		RestAssured.baseURI=baseURL+OrderID;
+		RestAssured.baseURI=GlobalData.baseURL;
 		
 		JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast
@@ -23,7 +25,7 @@ public class CancelOrder {
 		
 		 
 		// request.body(requestParams.toJSONString());
-		 Response response = put("/cancel");
+		 Response response = put("/v1/orders/"+OrderID+"/cancel");
 		 
 		 int statusCode = response.getStatusCode();
 		 System.out.println("Status Code is: "+statusCode);

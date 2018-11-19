@@ -1,0 +1,8 @@
+ <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="softwaretestingmaterial">
+	<test name="lalaTestNGTest">
+		<classes>
+			<class name="com.lala.test.RunTest" />
+		</classes>
+	</test>
+</suite>

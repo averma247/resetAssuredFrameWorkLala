@@ -13,7 +13,7 @@ import io.restassured.response.Response;
 public class DriveToCompleteOrder {
 
 	public int driveToCompleteRequest(String OrderID){
-		RestAssured.baseURI=baseURL+OrderID;
+		RestAssured.baseURI=baseURL;
 		
 		JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast
@@ -22,7 +22,7 @@ public class DriveToCompleteOrder {
 		
 		 
 		// request.body(requestParams.toJSONString());
-		 Response response = put("/complete");
+		 Response response = put("/v1/orders/"+OrderID+"/complete");
 		 System.out.println("Status Code is: "+response.getStatusCode());
 		
 		 String msgBody= response.body().asString();

@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4363" started-at="2018-11-18T08:01:44Z" finished-at="2018-11-18T08:01:49Z">
+  <suite name="softwaretestingmaterial" duration-ms="3585" started-at="2018-11-19T08:39:20Z" finished-at="2018-11-19T08:39:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4363" started-at="2018-11-18T08:01:44Z" finished-at="2018-11-18T08:01:49Z">
+    <test name="lalaTestNGTest" duration-ms="3585" started-at="2018-11-19T08:39:20Z" finished-at="2018-11-19T08:39:24Z">
       <class name="com.lala.test.RunTest">
-        <test-method status="PASS" signature="verifyPlaceOrder()[pri:1, instance:com.lala.test.RunTest@643b1d11]" name="verifyPlaceOrder" duration-ms="3398" started-at="2018-11-18T13:31:44Z" finished-at="2018-11-18T13:31:48Z">
+        <test-method status="PASS" signature="verifyPlaceOrder()[pri:1, instance:com.lala.test.RunTest@23ceabc1]" name="verifyPlaceOrder" duration-ms="1503" started-at="2018-11-19T14:09:20Z" finished-at="2018-11-19T14:09:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPlaceOrder -->
-        <test-method status="PASS" signature="verifyFetchOrderWhenOrderExist()[pri:2, instance:com.lala.test.RunTest@643b1d11]" name="verifyFetchOrderWhenOrderExist" duration-ms="284" started-at="2018-11-18T13:31:48Z" finished-at="2018-11-18T13:31:48Z">
+        <test-method status="PASS" signature="verifyFetchOrderWhenOrderExist()[pri:2, instance:com.lala.test.RunTest@23ceabc1]" name="verifyFetchOrderWhenOrderExist" duration-ms="375" started-at="2018-11-19T14:09:21Z" finished-at="2018-11-19T14:09:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFetchOrderWhenOrderExist -->
-        <test-method status="PASS" signature="verifyFetchOrderWhenOrderDoesNotExist()[pri:3, instance:com.lala.test.RunTest@643b1d11]" name="verifyFetchOrderWhenOrderDoesNotExist" duration-ms="33" started-at="2018-11-18T13:31:48Z" finished-at="2018-11-18T13:31:48Z">
+        <test-method status="PASS" signature="verifyFetchOrderWhenOrderDoesNotExist()[pri:3, instance:com.lala.test.RunTest@23ceabc1]" name="verifyFetchOrderWhenOrderDoesNotExist" duration-ms="172" started-at="2018-11-19T14:09:22Z" finished-at="2018-11-19T14:09:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFetchOrderWhenOrderDoesNotExist -->
-        <test-method status="PASS" signature="verifyDriveToTakeOrder()[pri:4, instance:com.lala.test.RunTest@643b1d11]" name="verifyDriveToTakeOrder" duration-ms="210" started-at="2018-11-18T13:31:48Z" finished-at="2018-11-18T13:31:48Z">
+        <test-method status="PASS" signature="verifyDriveToTakeOrder()[pri:4, instance:com.lala.test.RunTest@23ceabc1]" name="verifyDriveToTakeOrder" duration-ms="474" started-at="2018-11-19T14:09:22Z" finished-at="2018-11-19T14:09:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeOrder -->
-        <test-method status="PASS" signature="verifyDriveToComplete()[pri:5, instance:com.lala.test.RunTest@643b1d11]" name="verifyDriveToComplete" duration-ms="222" started-at="2018-11-18T13:31:48Z" finished-at="2018-11-18T13:31:49Z">
+        <test-method status="PASS" signature="verifyDriveToComplete()[pri:5, instance:com.lala.test.RunTest@23ceabc1]" name="verifyDriveToComplete" duration-ms="601" started-at="2018-11-19T14:09:22Z" finished-at="2018-11-19T14:09:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToComplete -->
-        <test-method status="PASS" signature="verifyCancelOrder()[pri:6, instance:com.lala.test.RunTest@643b1d11]" name="verifyCancelOrder" duration-ms="173" started-at="2018-11-18T13:31:49Z" finished-at="2018-11-18T13:31:49Z">
+        <test-method status="PASS" signature="verifyCancelOrder()[pri:6, instance:com.lala.test.RunTest@23ceabc1]" name="verifyCancelOrder" duration-ms="421" started-at="2018-11-19T14:09:23Z" finished-at="2018-11-19T14:09:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelOrder -->
       </class> <!-- com.lala.test.RunTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- lalaTestNGTest -->
+  </suite> <!-- softwaretestingmaterial -->
 </testng-results>
