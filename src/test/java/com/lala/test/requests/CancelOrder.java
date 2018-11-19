@@ -1,6 +1,6 @@
 package com.lala.test.requests;
 
-import static com.lala.test.GlobalData.baseURL;
+import static com.lala.test.GlobalData.prop;
 import static io.restassured.RestAssured.put;
 
 import org.json.simple.JSONObject;
@@ -16,7 +16,7 @@ public class CancelOrder {
 	
 	public int cancelOrderRequest(String OrderID){
 
-		RestAssured.baseURI=GlobalData.baseURL;
+		 RestAssured.baseURI=prop.getProperty("BaseURL");
 		
 		JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast

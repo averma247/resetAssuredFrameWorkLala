@@ -1,10 +1,8 @@
 package com.lala.test.requests;
 
 import org.json.simple.JSONObject;
-import com.lala.test.GlobalData;
+import static com.lala.test.GlobalData.*;
 import org.testng.Assert;
-
-import com.lala.test.GlobalData;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -18,7 +16,7 @@ public class PlaceOrder {
 	public int placeOrder(){
 		try { 
 			
-		 RestAssured.baseURI=GlobalData.baseURL;
+		 RestAssured.baseURI=prop.getProperty("baseURL");
 		
 //		
 		 RequestSpecification request = RestAssured.given();
@@ -34,7 +32,7 @@ public class PlaceOrder {
 		 
 		 JsonPath jsonPathEvaluator = response.jsonPath();
 		 System.out.println("Order ID from Response " + jsonPathEvaluator.get("id"));
-		 GlobalData.NewOrderID=(jsonPathEvaluator.get("id")).toString();
+		 NewOrderID=(jsonPathEvaluator.get("id")).toString();
 		 System.out.println("Response Data " + jsonPathEvaluator.prettyPrint());
 		 return statusCode;
 		 

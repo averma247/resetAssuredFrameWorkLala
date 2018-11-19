@@ -1,7 +1,11 @@
 package com.lala.test.requests;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -50,7 +54,10 @@ public class CreateJSONPayLoad {
 		
 	}
 	
-	public static void main(String args[]){
+	
+	
+	
+	public static void main(int[] args){
 		
 		//JSONObject json= createJSONPayloadNewOrder();
 		RequestSpecification httpRequest = RestAssured.given();
@@ -58,6 +65,36 @@ public class CreateJSONPayLoad {
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		System.out.println("Order ID from Response " + jsonPathEvaluator.prettyPrint());
 		
+	}
+	
+	public static void main(String[] args) {
+
+		Properties prop = new Properties();
+		InputStream input = null;
+
+		try {
+
+			input = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config.properties");
+
+			// load a properties file
+			prop.load(input);
+
+			// get the property value and print it out
+			System.out.println(prop.getProperty("baseURL"));
+			//System.out.println(prop.getProperty("dbuser"));
+			//System.out.println(prop.getProperty("dbpassword"));
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 	
 }

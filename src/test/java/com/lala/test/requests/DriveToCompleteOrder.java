@@ -1,6 +1,6 @@
 package com.lala.test.requests;
 
-import static com.lala.test.GlobalData.baseURL;
+import static com.lala.test.GlobalData.prop;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.put;
 
@@ -13,7 +13,7 @@ import io.restassured.response.Response;
 public class DriveToCompleteOrder {
 
 	public int driveToCompleteRequest(String OrderID){
-		RestAssured.baseURI=baseURL;
+		RestAssured.baseURI=prop.getProperty("baseURL");;
 		
 		JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast

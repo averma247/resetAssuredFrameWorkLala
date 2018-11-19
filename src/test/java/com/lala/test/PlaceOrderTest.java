@@ -1,6 +1,7 @@
 package com.lala.test;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.lala.test.requests.PlaceOrder;
@@ -21,6 +22,14 @@ public class PlaceOrderTest {
 	PlaceOrder placeorder=new PlaceOrder();
 	
 	String OrderID;
+	
+	
+	   @BeforeSuite
+	   public void suitelalaTestNGTest(){
+		 
+		   System.out.println("Reading Config file before executing test cases.");
+		   GlobalData.readConfigFile();
+	     }  
 		
 		@Test(priority=1, enabled=true)
 		public void verifyPlaceOrder(){

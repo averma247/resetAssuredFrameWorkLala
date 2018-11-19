@@ -1,6 +1,6 @@
 package com.lala.test.requests;
 
-import static com.lala.test.GlobalData.baseURL;
+import static com.lala.test.GlobalData.prop;
 import static io.restassured.RestAssured.get;
 
 import org.testng.Assert;
@@ -14,7 +14,7 @@ public class FetchOrder {
 
 	public static int fetchOrderRequest(String OrderID){
 		System.out.println("Sending Request to fetch the order detials.");
-		RestAssured.baseURI=GlobalData.baseURL;
+		RestAssured.baseURI=prop.getProperty("baseURL");
 		Response resp = get("/v1/orders/"+OrderID);		
 		return resp.getStatusCode();
 		
