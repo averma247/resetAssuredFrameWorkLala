@@ -10,21 +10,29 @@ import com.lala.test.GlobalData;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class CancelOrder {
 
 	
 	public int cancelOrderRequest(String OrderID){
 
-		 RestAssured.baseURI=prop.getProperty("BaseURL");
+		 RestAssured.baseURI=prop.getProperty("baseURL");
+		 RequestSpecification request = RestAssured.given();
 		
-		JSONObject requestParams = new JSONObject();
+		 JSONObject requestParams=CreateJSONPayLoad.readyJSONPayloadFromFile("Cancel");
+		 
+		 if(requestParams==null){
+			 System.out.println("readyJSONPayloadFromFile returned null value");
+			 Assert.fail("readyJSONPayloadFromFile returned null value");
+		 }
+		/*JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast
 		 requestParams.put("status", "CANCELLED");
-		 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
+		 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");*/
 		
-		 
-		// request.body(requestParams.toJSONString());
+		 requestParams.put("id", OrderID); 
+		 request.body(requestParams.toJSONString());
 		 Response response = put("/v1/orders/"+OrderID+"/cancel");
 		 
 		 int statusCode = response.getStatusCode();

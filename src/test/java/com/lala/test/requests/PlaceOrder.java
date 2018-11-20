@@ -13,7 +13,7 @@ public class PlaceOrder {
 	
 	Response response;
 	
-	public int placeOrder(){
+	public int placeNewOrder(){
 		try { 
 			
 		 RestAssured.baseURI=prop.getProperty("baseURL");
@@ -21,7 +21,7 @@ public class PlaceOrder {
 //		
 		 RequestSpecification request = RestAssured.given();
 		 
-		 JSONObject requestParams = CreateJSONPayLoad.createJSONPayloadNewOrder();
+		 JSONObject requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("NewOrder");
 		 request.body(requestParams.toJSONString());
 		 response = request.post("/v1/orders");
 		 
@@ -46,6 +46,43 @@ public class PlaceOrder {
 			}
 		
  	}
+	
+	
+	public int placeFutureOrder(){
+		try { 
+			
+		 RestAssured.baseURI=prop.getProperty("baseURL");
+		
+//		
+		 RequestSpecification request = RestAssured.given();
+		 
+		 JSONObject requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Future");
+		 request.body(requestParams.toJSONString());
+		 response = request.post("/v1/orders");
+		 
+		 int statusCode = response.getStatusCode();
+		 System.out.println("Status Code is: "+statusCode);
+		 String msgBody= response.body().asString();
+		 System.out.println("Message Body: "+msgBody);
+		 
+		 JsonPath jsonPathEvaluator = response.jsonPath();
+		 System.out.println("Order ID from Response " + jsonPathEvaluator.get("id"));
+		 NewOrderID=(jsonPathEvaluator.get("id")).toString();
+		 System.out.println("Response Data " + jsonPathEvaluator.prettyPrint());
+		 return statusCode;
+		 
+		}
+			catch(Exception e){
+				
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed while sending the JSON payload.");
+				return 0;
+				
+			}
+		
+ 	}
+	
+	
 	
 	public void verifyStatusCode(int actualStatusCode, int expectedStatusCode ){
 		

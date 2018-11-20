@@ -1,6 +1,7 @@
 package com.lala.test;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.lala.test.requests.CancelOrder;
@@ -20,6 +21,14 @@ public class CancelOrderTest {
 	PlaceOrder placeorder=new PlaceOrder();
 	CancelOrder cancelorder=new CancelOrder();
 	
+	@BeforeSuite
+	   public void suitelalaTestNGTest(){
+		 
+		   System.out.println("Reading Config file before executing test cases.");
+		   GlobalData.readConfigFile();
+	     }  
+	
+	
 	@Test(priority=6, enabled=true)
 	public void verifyCancelOrder(){
 	
@@ -27,7 +36,7 @@ public class CancelOrderTest {
 			
 			System.out.println("Verifying Order state to Complete, Order is assiging state.");
 			
-			int orderPlacedStatus=placeorder.placeOrder();
+			int orderPlacedStatus=placeorder.placeNewOrder();
 			if(orderPlacedStatus==0){
 				System.out.println("Error while placing order, Try placing order manually.");
 				System.out.println("Test is failed.");
@@ -55,6 +64,7 @@ public class CancelOrderTest {
 
 			System.out.println(e.getMessage()); 
 			System.out.println("Test is failed");
+			Assert.fail("Test is failed, Please check server connection.");
 		}
 		
 

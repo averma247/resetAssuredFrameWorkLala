@@ -9,19 +9,32 @@ import org.testng.Assert;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class DriveToCompleteOrder {
 
 	public int driveToCompleteRequest(String OrderID){
-		RestAssured.baseURI=prop.getProperty("baseURL");;
+		RestAssured.baseURI=prop.getProperty("baseURL");
 		
-		JSONObject requestParams = new JSONObject();
+		RequestSpecification request = RestAssured.given();
+		 
+		 JSONObject requestParams=CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
+		 
+		 if(requestParams==null){
+			 System.out.println("readyJSONPayloadFromFile returned null value");
+			 Assert.fail("readyJSONPayloadFromFile returned null value");
+		 }
+		 
+		 requestParams.put("id", OrderID); 
+		
+		
+		/*JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast
 		 requestParams.put("status", "COMPLETED");
-		 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
+		 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");*/
 		
 		 
-		// request.body(requestParams.toJSONString());
+		 request.body(requestParams.toJSONString());
 		 Response response = put("/v1/orders/"+OrderID+"/complete");
 		 System.out.println("Status Code is: "+response.getStatusCode());
 		

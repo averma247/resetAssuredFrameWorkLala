@@ -1,6 +1,7 @@
 package com.lala.test;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.lala.test.requests.DriveToCompleteOrder;
@@ -22,6 +23,13 @@ public class DriveToCompleteOrderTest {
 	DriveToTakeOrder drivetotakeorder= new DriveToTakeOrder();
 	DriveToCompleteOrder drivetocomplete=new DriveToCompleteOrder();
 	
+	@BeforeSuite
+	   public void suitelalaTestNGTest(){
+		 
+		   System.out.println("Reading Config file before executing test cases.");
+		   GlobalData.readConfigFile();
+	     }  
+	
 	
 	@Test(priority=5, enabled=true)
 	public void verifyDriveToComplete(){
@@ -30,7 +38,7 @@ public class DriveToCompleteOrderTest {
 			
 			System.out.println("Verifying Order state to Complete, Order is assiging state.");
 			
-			int orderPlacedStatus=placeorder.placeOrder();
+			int orderPlacedStatus=placeorder.placeNewOrder();
 			if(orderPlacedStatus==0){
 				System.out.println("Error while placing order, Try placing order manually.");
 				System.out.println("Test is failed.");

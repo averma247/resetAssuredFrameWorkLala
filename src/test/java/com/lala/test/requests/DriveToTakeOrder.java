@@ -10,20 +10,31 @@ import com.lala.test.GlobalData;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class DriveToTakeOrder {
 
 	public  int driveToTakeOrderRequest(String OrderID){
 		
 		 RestAssured.baseURI=prop.getProperty("baseURL");
+		 RequestSpecification request = RestAssured.given();
+		 
+		 JSONObject requestParams=CreateJSONPayLoad.readyJSONPayloadFromFile("Takeaway");
+		 
+		 if(requestParams==null){
+			 System.out.println("readyJSONPayloadFromFile returned null value");
+			 Assert.fail("readyJSONPayloadFromFile returned null value");
+		 }
+		 
+		 requestParams.put("id", OrderID); 
 		
-		JSONObject requestParams = new JSONObject();
+		/* JSONObject requestParams = new JSONObject();
 		 requestParams.put("id", OrderID); // Cast
 		 requestParams.put("status", "ONGOING");
 		 requestParams.put("ongoingAt", "2018-09-01T14:53:26.000Z");
-		
+		*/
 		 
-		// request.body(requestParams.toJSONString());
+		 request.body(requestParams.toJSONString());
 		 Response response = put("/v1/orders/"+OrderID+"/take");
 		 
 		 return response.getStatusCode();

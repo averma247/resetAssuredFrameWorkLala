@@ -47,7 +47,7 @@ public class RunTest {
 			System.out.println("Verfying New Order Flow with Valid Data.");
 			try{
 				
-				int actualStatusCode=placeorder.placeOrder();
+				int actualStatusCode=placeorder.placeNewOrder();
 				if(actualStatusCode!=0){
 					placeorder.verifyStatusCode(actualStatusCode, 201);					
 				}
@@ -76,7 +76,7 @@ public class RunTest {
 				
 				System.out.println("Verfying Fetch Order Flow.");
 				
-				int orderPlacedStatus=placeorder.placeOrder();
+				int orderPlacedStatus=placeorder.placeNewOrder();
 				if(orderPlacedStatus==0){
 					System.out.println("Error while placing order, Try placing order manually.");
 					System.out.println("Test is failed.");
@@ -146,7 +146,7 @@ public class RunTest {
 				
 				System.out.println("Verfying Drive to take Order, Order is assiging state.");
 				
-				int orderPlacedStatus=placeorder.placeOrder();
+				int orderPlacedStatus=placeorder.placeNewOrder();
 				if(orderPlacedStatus==0){
 					System.out.println("Error while placing order, Try placing order manually.");
 					System.out.println("Test is failed.");
@@ -188,7 +188,7 @@ public class RunTest {
 				
 				System.out.println("Verifying Order state to Complete, Order is assiging state.");
 				
-				int orderPlacedStatus=placeorder.placeOrder();
+				int orderPlacedStatus=placeorder.placeNewOrder();
 				if(orderPlacedStatus==0){
 					System.out.println("Error while placing order, Try placing order manually.");
 					System.out.println("Test is failed.");
@@ -236,7 +236,7 @@ public class RunTest {
 				
 				System.out.println("Verifying Order state to Complete, Order is assiging state.");
 				
-				int orderPlacedStatus=placeorder.placeOrder();
+				int orderPlacedStatus=placeorder.placeNewOrder();
 				if(orderPlacedStatus==0){
 					System.out.println("Error while placing order, Try placing order manually.");
 					System.out.println("Test is failed.");

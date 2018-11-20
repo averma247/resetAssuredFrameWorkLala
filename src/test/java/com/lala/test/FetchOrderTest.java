@@ -1,6 +1,7 @@
 package com.lala.test;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import com.lala.test.requests.FetchOrder;
@@ -21,6 +22,14 @@ public class FetchOrderTest {
 	PlaceOrder placeorder=new PlaceOrder();
 	FetchOrder fetchorder= new FetchOrder();
 	
+	@BeforeSuite
+	   public void suitelalaTestNGTest(){
+		 
+		   System.out.println("Reading Config file before executing test cases.");
+		   GlobalData.readConfigFile();
+	     }  
+	
+	
 	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderWhenOrderExist(){
 					
@@ -28,7 +37,7 @@ public class FetchOrderTest {
 			
 			System.out.println("Verfying Fetch Order Flow.");
 			
-			int orderPlacedStatus=placeorder.placeOrder();
+			int orderPlacedStatus=placeorder.placeNewOrder();
 			if(orderPlacedStatus==0){
 				System.out.println("Error while placing order, Try placing order manually.");
 				System.out.println("Test is failed.");

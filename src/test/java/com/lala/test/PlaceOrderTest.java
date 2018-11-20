@@ -32,12 +32,12 @@ public class PlaceOrderTest {
 	     }  
 		
 		@Test(priority=1, enabled=true)
-		public void verifyPlaceOrder(){
+		public void verifyNewOrder(){
 			
 			System.out.println("Verfying New Order Flow with Valid Data.");
 			try{
 				
-				int actualStatusCode=placeorder.placeOrder();
+				int actualStatusCode=placeorder.placeNewOrder();
 				if(actualStatusCode!=0){
 					placeorder.verifyStatusCode(actualStatusCode, 201);					
 				}
@@ -58,5 +58,36 @@ public class PlaceOrderTest {
 			}
 						
 		}/*-- END OF METHOD --*/
+		
+		
+		@Test(priority=1, enabled=true)
+		public void verifyFutureOrder(){
+			
+			System.out.println("Verfying Future Order Flow with Valid Data.");
+			try{
+				
+				int actualStatusCode=placeorder.placeFutureOrder();
+				if(actualStatusCode!=0){
+					placeorder.verifyStatusCode(actualStatusCode, 201);					
+				}
+				else{
+					
+					System.out.println("Error while placing order, please check server connection.");
+					System.out.println("Test is failed.");
+					Assert.fail("Test is failed, Error while placing order, please check server connection.");
+				}
+				
+				System.out.println("Test is passed.");
+			}
+			
+			catch(Exception e){
+				
+				System.out.println(e.getMessage()); 
+				System.out.println("Test is failed");
+				Assert.fail("Test is failed, Error while placing order, please check server connection.");
+			}
+						
+		}/*-- END OF METHOD --*/
+
 
 }
