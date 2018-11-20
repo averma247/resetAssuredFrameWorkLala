@@ -107,7 +107,7 @@ public class CreateJSONPayLoad {
            
             else  if(requestType.contains("Takeaway"))
         	{
-            	FileReader reader = new FileReader((System.getProperty("user.dir")+"/src/test/resources/takeawayload.json"));
+            	FileReader reader = new FileReader((System.getProperty("user.dir")+"/src/test/resources/takeawaypayload.json"));
         	
         	
         	//Read JSON file
