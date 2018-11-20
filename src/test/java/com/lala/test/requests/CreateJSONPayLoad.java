@@ -163,7 +163,7 @@ public class CreateJSONPayLoad {
            
            else{
             	
-            	System.out.println("Please provide the correct request tyep.");
+            	System.out.println("Please provide the correct request type.");
             	return null;
             }
  

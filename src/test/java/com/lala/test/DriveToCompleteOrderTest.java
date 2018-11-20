@@ -2,6 +2,7 @@ package com.lala.test;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.lala.test.requests.DriveToCompleteOrder;
@@ -23,7 +24,7 @@ public class DriveToCompleteOrderTest {
 	DriveToTakeOrder drivetotakeorder= new DriveToTakeOrder();
 	DriveToCompleteOrder drivetocomplete=new DriveToCompleteOrder();
 	
-	@BeforeSuite
+	@BeforeTest
 	   public void suitelalaTestNGTest(){
 		 
 		   System.out.println("Reading Config file before executing test cases.");

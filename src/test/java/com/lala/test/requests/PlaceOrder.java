@@ -56,7 +56,7 @@ public class PlaceOrder {
 //		
 		 RequestSpecification request = RestAssured.given();
 		 
-		 JSONObject requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Future");
+		 JSONObject requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("FutureOrder");
 		 request.body(requestParams.toJSONString());
 		 response = request.post("/v1/orders");
 		 
