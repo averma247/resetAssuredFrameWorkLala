@@ -1,8 +1,12 @@
  <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="softwaretestingmaterial">
+<suite name="lala Rest Api Testing">
 	<test name="lalaTestNGTest">
 		<classes>
 			<class name="com.lala.test.CancelOrderTest" />
+			<class name="com.lala.test.PlaceOrderTest" />
+			<class name="com.lala.test.FetchOrderTest" />
+			<class name="com.lala.test.DriveToTakeOrderTest" />
+			<class name="com.lala.test.DriveToCompleteOrderTest" />
 		</classes>
 	</test>
 </suite>
