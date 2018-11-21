@@ -6,12 +6,12 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class GlobalData {
-	
+
 	public static String NewOrderID=null;
 	public static Properties prop = new Properties();
 	public static void readConfigFile() {
 
-		
+
 		InputStream input = null;
 
 		try {
@@ -38,7 +38,7 @@ public class GlobalData {
 			}
 		}
 	}
-	
-	
-	
+
+
+
 }

@@ -24,29 +24,29 @@ public class DriveToTakeOrderTest {
 	PlaceOrder placeorder=new PlaceOrder();
 	FetchOrder fetchorder= new FetchOrder();
 	DriveToTakeOrder drivetotakeorder= new DriveToTakeOrder();
-	
+
 	@BeforeTest
-	   public void suitelalaTestNGTest(){
-		 
-		   System.out.println("Reading Config file before executing test cases.");
-		   GlobalData.readConfigFile();
-	     }  
-	
-	
+	public void suitelalaTestNGTest(){
+
+		System.out.println("Reading Config file before executing test cases.");
+		GlobalData.readConfigFile();
+	}  
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeOrder(){
-		
+
 		try{
-			
+
 			System.out.println("Verfying Drive to take Order, Order is assiging state.");
-			
+
 			int orderPlacedStatus=placeorder.placeNewOrder();
 			if(orderPlacedStatus==0){
 				System.out.println("Error while placing order, Try placing order manually.");
 				System.out.println("Test is failed.");
 				Assert.fail("Test is failed, Try placing order manually.");				
 			}
-			
+
 			String OrderID=GlobalData.NewOrderID;
 			System.out.println("Order ID is: "+ OrderID);
 			int actualStatusCode=drivetotakeorder.driveToTakeOrderRequest(OrderID);
@@ -54,16 +54,16 @@ public class DriveToTakeOrderTest {
 				drivetotakeorder.verifyStatusCode(actualStatusCode, 200);					
 			}
 			else{
-				
+
 				System.out.println("Error while changing the order status, please check server connection.");
 				System.out.println("Test is failed.");
 				Assert.fail("Error while fetching the order details, please check server connection.");
 			}
-			
+
 			System.out.println("Test is Passed.");
-			
-			
-			
+
+
+
 		}catch(Exception e){
 
 			System.out.println(e.getMessage()); 
@@ -72,5 +72,5 @@ public class DriveToTakeOrderTest {
 
 	}/*--END OF METHOD---*/
 
-	
+
 }

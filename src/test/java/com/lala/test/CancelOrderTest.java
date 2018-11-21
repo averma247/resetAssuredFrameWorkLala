@@ -19,32 +19,32 @@ import com.lala.test.requests.PlaceOrder;
 
 
 public class CancelOrderTest {
-	
+
 	PlaceOrder placeorder=new PlaceOrder();
 	CancelOrder cancelorder=new CancelOrder();
-	
+
 	@BeforeClass
-	   public void suitelalaTestNGTest(){
-		 
-		   System.out.println("Reading Config file before executing test cases.");
-		   GlobalData.readConfigFile();
-	     }  
-	
-	
+	public void suitelalaTestNGTest(){
+
+		System.out.println("Reading Config file before executing test cases.");
+		GlobalData.readConfigFile();
+	}  
+
+
 	@Test(priority=6, enabled=true)
 	public void verifyCancelOrder(){
-	
+
 		try{
-			
+
 			System.out.println("Verifying Order state to Complete, Order is assiging state.");
-			
+
 			int orderPlacedStatus=placeorder.placeNewOrder();
 			if(orderPlacedStatus==0){
 				System.out.println("Error while placing order, Try placing order manually.");
 				System.out.println("Test is failed.");
 				Assert.fail("Test is failed, Try placing order manually.");				
 			}
-			
+
 			String OrderID=GlobalData.NewOrderID;
 			System.out.println("Order ID is: "+ OrderID);
 			int actualStatusCode=cancelorder.cancelOrderRequest(OrderID);
@@ -52,23 +52,23 @@ public class CancelOrderTest {
 				cancelorder.verifyStatusCode(actualStatusCode, 200);					
 			}
 			else{
-				
+
 				System.out.println("Error while fetching the order details, please check server connection.");
 				System.out.println("Test is failed.");
 				Assert.fail("Error while fetching the order details, please check server connection.");
 			}
-			
+
 			System.out.println("Test is Passed.");
-			
-			
-			
+
+
+
 		}catch(Exception e){
 
 			System.out.println(e.getMessage()); 
 			System.out.println("Test is failed");
 			Assert.fail("Test is failed, Please check server connection.");
 		}
-		
+
 
 	}/*--END OF METHOD---*/
 
