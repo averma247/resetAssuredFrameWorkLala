@@ -23,7 +23,7 @@ public class PlaceOrder {
 
 			JSONObject requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("NewOrder");
 			request.body(requestParams.toJSONString());
-			response = request.post("/v1/orders");
+			response = request.post(prop.getProperty("placeOrderURL"));
 
 			int statusCode = response.getStatusCode();
 			System.out.println("Status Code is: "+statusCode);
@@ -58,7 +58,7 @@ public class PlaceOrder {
 
 			JSONObject requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("FutureOrder");
 			request.body(requestParams.toJSONString());
-			response = request.post("/v1/orders");
+			response = request.post(prop.getProperty("placeOrderURL"));
 
 			int statusCode = response.getStatusCode();
 			System.out.println("Status Code is: "+statusCode);

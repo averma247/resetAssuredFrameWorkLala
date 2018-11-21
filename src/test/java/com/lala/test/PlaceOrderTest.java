@@ -40,7 +40,9 @@ public class PlaceOrderTest {
 
 			int actualStatusCode=placeorder.placeNewOrder();
 			if(actualStatusCode!=0){
-				placeorder.verifyStatusCode(actualStatusCode, 201);					
+				// --- checking the status code
+				Assert.assertEquals(actualStatusCode, 201);
+				System.out.println("Actual and expected response status code is matched");
 			}
 			else{
 
@@ -56,6 +58,7 @@ public class PlaceOrderTest {
 
 			System.out.println(e.getMessage()); 
 			System.out.println("Test is failed");
+			Assert.fail("Test is failed, Error while placing order, please check server connection.");
 		}
 
 	}/*-- END OF METHOD --*/
@@ -69,7 +72,8 @@ public class PlaceOrderTest {
 
 			int actualStatusCode=placeorder.placeFutureOrder();
 			if(actualStatusCode!=0){
-				placeorder.verifyStatusCode(actualStatusCode, 201);					
+				Assert.assertEquals(actualStatusCode, 201);
+				System.out.println("Actual and expected response status code is matched");			
 			}
 			else{
 
