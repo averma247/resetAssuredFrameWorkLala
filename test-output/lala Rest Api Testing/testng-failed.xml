@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [lala Rest Api Testing]">
   <test name="lalaTestNGTest">
     <classes>
-      <class name="com.lala.test.CancelOrderTest"/>
+      <class name="com.lala.test.DriveToCompleteOrderTest"/>
     </classes>
   </test> <!-- lalaTestNGTest -->
 </suite> <!-- Failed suite [lala Rest Api Testing] -->

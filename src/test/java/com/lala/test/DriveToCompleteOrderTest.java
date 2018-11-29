@@ -1,13 +1,16 @@
 package com.lala.test;
 
+import java.util.HashMap;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.requests.DriveToCompleteOrder;
-import com.lala.requests.DriveToTakeOrder;
-import com.lala.requests.PlaceOrder;
+import com.lala.requests.RESTApiCalls;
+import static com.lala.test.GlobalData.prop;
+
+import io.restassured.response.Response;
 
 /**
  * Below execute the test cases to very APIs to process orders and 
@@ -18,11 +21,10 @@ import com.lala.requests.PlaceOrder;
  * */
 
 
-public class DriveToCompleteOrderTest {
+public class DriveToCompleteOrderTest extends RESTApiCalls{
 
-	PlaceOrder placeorder=new PlaceOrder();
-	DriveToTakeOrder drivetotakeorder= new DriveToTakeOrder();
-	DriveToCompleteOrder drivetocomplete=new DriveToCompleteOrder();
+	private PlaceOrderTest placeorder=new PlaceOrderTest();	
+	private DriveToTakeOrderTest drivetotakeorder= new DriveToTakeOrderTest();
 
 	@BeforeTest
 	public void suitelalaTestNGTest(){
@@ -32,52 +34,111 @@ public class DriveToCompleteOrderTest {
 	}  
 
 
-	@Test(priority=5, enabled=true)
-	public void verifyDriveToComplete(){
+	@Test(priority=5, enabled=false)
+	public void verifyDriveToCompleteForNewOrder(){
 
-		try{
-
-			System.out.println("Verifying Order state to Complete, Order is assiging state.");
-
-			int orderPlacedStatus=placeorder.placeNewOrder();
-			if(orderPlacedStatus==0){
-				System.out.println("Error while placing order, Try placing order manually.");
-				System.out.println("Test is failed.");
-				Assert.fail("Test is failed, Try placing order manually.");				
-			}
-
-			String OrderID=GlobalData.NewOrderID;
-
-			int orderTakeAwayStatus=drivetotakeorder.driveToTakeOrderRequest(OrderID);
-			if(orderTakeAwayStatus==0){
-				System.out.println("Error while placing order, Try doing manually.");
-				System.out.println("Test is failed.");
-				Assert.fail("Test is failed, Try doing manually.");						
-			}
-
-			System.out.println("Order ID is: "+ OrderID);
-			int actualStatusCode=drivetocomplete.driveToCompleteRequest(OrderID);
-			if(actualStatusCode!=0){
-				drivetotakeorder.verifyStatusCode(actualStatusCode, 200);					
-			}
-			else{
-
-				System.out.println("Error while fetching the order details, please check server connection.");
-				System.out.println("Test is failed.");
-				Assert.fail("Error while fetching the order details, please check server connection.");
-			}
-
-			System.out.println("Test is Passed.");
+		System.out.println("Placing New Order and Changing order status to Ongoing");
+		drivetotakeorder.verifyDriveToTakeOrder();
 
 
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Complete Order");
+		RequestData.put("OrderID", GlobalData.NewOrderID);
+		Response response=sendRESTAPIRequest(RequestData);
 
-		}catch(Exception e){
-
-			System.out.println(e.getMessage()); 
-			System.out.println("Test is failed");
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+
+	}/*--END OF METHOD---*/
+
+
+	@Test(priority=5, enabled=false)
+	public void verifyDriveToCompleteForNonExistingOrder(){
+
+		System.out.println("Verifying flow for order doesnot exist.");			
+
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Complete Order");
+		RequestData.put("OrderID", "-1");
+		Response response=sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
+		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 404));
 
 
 	}/*--END OF METHOD---*/
+
+
+	@Test(priority=5, enabled=false)
+	public void verifyDriveToCompleteForOnderOnAssignedState(){
+
+		System.out.println("Verifying flow for order on Assigned state.");			
+
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Complete Order");
+		RequestData.put("OrderID", prop.getProperty("assignedOrderID"));
+		Response response=sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
+		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+
+
+	}/*--END OF METHOD---*/
+
+
+	@Test(priority=5, enabled=false)
+	public void verifyDriveToCompleteForCompletedOrder(){
+
+		System.out.println("Verifying flow for order on Assigned state.");			
+
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Complete Order");
+		RequestData.put("OrderID", prop.getProperty("completedOrderID"));
+		Response response=sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
+		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+
+
+	}/*--END OF METHOD---*/
+
+
+
+	@Test(priority=5, enabled=false)
+	public void verifyDriveToCompleteForCancelOrder(){
+
+		System.out.println("Verifying flow for order on Cancelled state.");			
+
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Complete Order");
+		RequestData.put("OrderID", prop.getProperty("cancelledOrderID"));
+		Response response=sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
+		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+
+
+	}/*--END OF METHOD---*/
+
 
 }

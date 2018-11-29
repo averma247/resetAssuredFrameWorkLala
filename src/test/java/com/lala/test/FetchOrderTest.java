@@ -1,12 +1,16 @@
 package com.lala.test;
 
+import static com.lala.test.GlobalData.prop;
+
+import java.util.HashMap;
+
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.requests.FetchOrder;
-import com.lala.requests.PlaceOrder;
+import com.lala.requests.RESTApiCalls;
+import io.restassured.response.Response;
+import static com.lala.test.GlobalData.NewOrderID;
 
 
 /**
@@ -18,10 +22,9 @@ import com.lala.requests.PlaceOrder;
  * */
 
 
-public class FetchOrderTest {
+public class FetchOrderTest extends RESTApiCalls {
 
-	PlaceOrder placeorder=new PlaceOrder();
-	FetchOrder fetchorder= new FetchOrder();
+	private PlaceOrderTest placeorder=new PlaceOrderTest();
 
 	@BeforeTest
 	public void suitelalaTestNGTest(){
@@ -31,111 +34,69 @@ public class FetchOrderTest {
 	}  
 
 
-	@Test(priority=1, enabled=true)
-	public void verifyFetchOrderWhenOrderExist1(){
+	@Test(priority=1, enabled=false)
+	public void verifyFetchOrderForNewOrder(){
 
-		try{
+		System.out.println("Verifying Fetch order for New Order");
+		placeorder.verifyNewOrder();
+		
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Fetch Order");
+		RequestData.put("OrderID", NewOrderID);
+		Response response=sendRESTAPIRequest(RequestData);
 
-			System.out.println("Verfying Fetch Order Flow.");
-
-			int orderPlacedStatus=placeorder.placeNewOrder();
-			if(orderPlacedStatus==0){
-				System.out.println("Error while placing order, Try placing order manually.");
-				System.out.println("Test is failed.");
-				Assert.fail("Test is failed, Try placing order manually.");				
-			}
-
-			String OrderID=GlobalData.NewOrderID;
-			System.out.println("Order ID is: "+ OrderID);
-			int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
-			if(actualStatusCode!=0){
-				fetchorder.verifyStatusCode(actualStatusCode, 200);					
-			}
-			else{
-
-				System.out.println("Error while fetching the order details, please check server connection.");
-				System.out.println("Test is failed.");
-				Assert.fail("Error while fetching the order details, please check server connection.");
-			}
-
-			System.out.println("Test is Passed.");
-
-		}catch(Exception e){
-
-			System.out.println(e.getMessage()); 
-			System.out.println("Test is failed");
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		System.out.println("Test Case is Passed");
 
 
 	}/*--END OF METHOD---*/
-
-	@Test(priority=3, enabled=true)
-	public void verifyFetchOrderWhenOrderDoesNotExist(){
-
-		try{
-
-			System.out.println("Verfying Fetch Order Flow for non existing order.");
-			String OrderID="-1";
-			System.out.println("Order ID is: "+ OrderID);
-			int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
-			if(actualStatusCode!=0){
-				fetchorder.verifyStatusCode(actualStatusCode, 404);					
-			}
-			else{
-
-				System.out.println("Error while fetching the order details, please check server connection.");
-				System.out.println("Test is failed.");
-				Assert.fail("Error while fetching the order details, please check server connection.");
-			}
-
-			System.out.println("Test is Passed.");
-
-		}catch(Exception e){
-
-			System.out.println(e.getMessage()); 
-			System.out.println("Test is failed");
-		}
-
-	}/*----------- END OF METHOD --------------------*/
 	
 	
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	public void verifyFetchOrderWhenOrderExist(){
 
-		try{
+		System.out.println("Verifying Fetch order for already existing order");
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Fetch Order");
+		RequestData.put("OrderID", prop.getProperty("existingOrderID"));
+		Response response=sendRESTAPIRequest(RequestData);
 
-			System.out.println("Verfying Fetch Order Flow.");
-
-			int orderPlacedStatus=placeorder.placeNewOrder();
-			if(orderPlacedStatus==0){
-				System.out.println("Error while placing order, Try placing order manually.");
-				System.out.println("Test is failed.");
-				Assert.fail("Test is failed, Try placing order manually.");				
-			}
-
-			String OrderID=GlobalData.NewOrderID;
-			System.out.println("Order ID is: "+ OrderID);
-			int actualStatusCode=FetchOrder.fetchOrderRequest(OrderID);
-			if(actualStatusCode!=0){
-				fetchorder.verifyStatusCode(actualStatusCode, 200);					
-			}
-			else{
-
-				System.out.println("Error while fetching the order details, please check server connection.");
-				System.out.println("Test is failed.");
-				Assert.fail("Error while fetching the order details, please check server connection.");
-			}
-
-			System.out.println("Test is Passed.");
-
-		}catch(Exception e){
-
-			System.out.println(e.getMessage()); 
-			System.out.println("Test is failed");
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		System.out.println("Test Case is Passed");
 
 
 	}/*--END OF METHOD---*/
+	
+	
+	@Test(priority=1, enabled=true)
+	public void verifyFetchOrderWhenOrderDoesNotExist(){
+
+		System.out.println("Verifying Fetch order functionality for non existing order");
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Fetch Order");
+		RequestData.put("OrderID", "-1");
+		Response response=sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check manually.");
+		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 404));
+		System.out.println("Test Case completed");
+		
+		
+	}/*----------- END OF METHOD --------------------*/
 	
 	
 

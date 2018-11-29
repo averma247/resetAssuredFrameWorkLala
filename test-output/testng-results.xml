@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="lala Rest Api Testing" duration-ms="83965" started-at="2018-11-29T09:49:21Z" finished-at="2018-11-29T09:50:45Z">
+  <suite name="lala Rest Api Testing" duration-ms="959" started-at="2018-11-29T12:55:33Z" finished-at="2018-11-29T12:55:34Z">
     <groups>
     </groups>
-    <test name="lalaTestNGTest" duration-ms="83965" started-at="2018-11-29T09:49:21Z" finished-at="2018-11-29T09:50:45Z">
-      <class name="com.lala.test.CancelOrderTest">
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.CancelOrderTest@19bb07ed]" name="suitelalaTestNGTest" is-config="true" duration-ms="10" started-at="2018-11-29T15:19:21Z" finished-at="2018-11-29T15:19:21Z">
+    <test name="lalaTestNGTest" duration-ms="959" started-at="2018-11-29T12:55:33Z" finished-at="2018-11-29T12:55:34Z">
+      <class name="com.lala.test.DriveToCompleteOrderTest">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToCompleteOrderTest@39aeed2f]" name="suitelalaTestNGTest" is-config="true" duration-ms="7" started-at="2018-11-29T18:25:33Z" finished-at="2018-11-29T18:25:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyCancelExistingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@19bb07ed]" name="verifyCancelExistingOrder" duration-ms="83942" started-at="2018-11-29T15:19:21Z" finished-at="2018-11-29T15:20:45Z">
+        <test-method status="PASS" signature="verifyDriveToCompleteForNonExistingOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@39aeed2f]" name="verifyDriveToCompleteForNonExistingOrder" duration-ms="942" started-at="2018-11-29T18:25:33Z" finished-at="2018-11-29T18:25:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCancelExistingOrder -->
-      </class> <!-- com.lala.test.CancelOrderTest -->
+        </test-method> <!-- verifyDriveToCompleteForNonExistingOrder -->
+      </class> <!-- com.lala.test.DriveToCompleteOrderTest -->
     </test> <!-- lalaTestNGTest -->
   </suite> <!-- lala Rest Api Testing -->
 </testng-results>

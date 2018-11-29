@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.requests.PlaceOrder;
 import com.lala.requests.RESTApiCalls;
 
 import io.restassured.response.Response;
@@ -22,11 +21,8 @@ import io.restassured.response.Response;
  * */
 
 
-public class PlaceOrderTest {
+public class PlaceOrderTest extends RESTApiCalls{
 
-	PlaceOrder placeorder=new PlaceOrder();
-
-	String OrderID;
 
 
 	@BeforeTest
@@ -38,7 +34,7 @@ public class PlaceOrderTest {
 
 
 
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	public void verifyNewOrder(){
 
 		System.out.println("Verfying New Order Flow with Valid Data.");
@@ -47,7 +43,7 @@ public class PlaceOrderTest {
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "New Order");
-		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
+		Response response=sendRESTAPIRequest(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
@@ -55,13 +51,14 @@ public class PlaceOrderTest {
 
 		System.out.println("Verifying status code.");
 		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched. Test Case passed.");
-		System.out.println("Test Case is Passed");
+		
+		
 
 	}/*-- END OF METHOD --*/
 
 
 
-	/*@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=true)
 	public void verifyFutureOrder(){
 
 		System.out.println("Verfying New Order Flow with Valid Data.");
@@ -70,7 +67,7 @@ public class PlaceOrderTest {
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Future Order");
-		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
+		Response response=sendRESTAPIRequest(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
@@ -78,31 +75,26 @@ public class PlaceOrderTest {
 
 		System.out.println("Verifying status code.");
 		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched.");
-		System.out.println("Test Case is Passed");
+		
 
-	}-- END OF METHOD --*/
+	}/*--- END OF METHOD --*/
 
 
-	/*@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=true)
 	public void verifyNewOrderWithInvalidPayload(){
 
 		System.out.println("Verfying New Order Flow with In-Valid Data.");
 
-		//int actualStatusCode=placeorder.placeNewOrder();
-
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
-		RequestData.put("RequestType", "New Order");
-		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
+		RequestData.put("RequestType", "InValid Payload");
+		Response response=sendRESTAPIRequest(RequestData);
 
 		if(response==null){
-			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
+			Assert.assertTrue(true,"Test is Passed, Providing valid error message.");
 		}
+		
 
-		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched.");
-		System.out.println("Test Case is Passed");
-
-	}-- END OF METHOD --*/
+	}/*-- END OF METHOD --*/
 
 
 
