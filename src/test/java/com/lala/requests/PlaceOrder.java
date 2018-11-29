@@ -1,4 +1,4 @@
-package com.lala.test.requests;
+package com.lala.requests;
 
 import org.json.simple.JSONObject;
 import static com.lala.test.GlobalData.*;

@@ -1,16 +1,13 @@
 package com.lala.test;
 
-import static org.testng.Assert.assertTrue;
-
 import java.util.HashMap;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.test.requests.PlaceOrder;
-import com.lala.test.requests.RESTApiCalls;
+import com.lala.requests.PlaceOrder;
+import com.lala.requests.RESTApiCalls;
 
 import io.restassured.response.Response;
 

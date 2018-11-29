@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.test.requests.FetchOrder;
-import com.lala.test.requests.PlaceOrder;
+import com.lala.requests.FetchOrder;
+import com.lala.requests.PlaceOrder;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.lala.test.requests;
+package com.lala.requests;
 
 import static com.lala.test.GlobalData.NewOrderID;
 import static com.lala.test.GlobalData.prop;
@@ -16,7 +16,6 @@ import io.restassured.specification.RequestSpecification;
 public class RESTApiCalls {
 
 	public static Response response=null;
-	public static RequestSpecification request = RestAssured.given();
 	public static JSONObject requestParams=null;
 	public static JsonPath jsonPathEvaluator = null;
 
@@ -67,7 +66,7 @@ public class RESTApiCalls {
 			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Cancel");
 			request.body(requestParams.toJSONString());
-			response = request.put(prop.getProperty("placeOrderURL")+RequestData.get("OrderID")+prop.getProperty("cancelOrderURL"));
+			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("cancelOrderURL"));
 			return response;
 		}
 
@@ -75,7 +74,7 @@ public class RESTApiCalls {
 			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Takeaway");
 			request.body(requestParams.toJSONString());
-			response = request.put(prop.getProperty("placeOrderURL")+RequestData.get("OrderID")+prop.getProperty("takeawayOrderURL"));
+			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("takeawayOrderURL"));
 			return response;
 		}
 
@@ -83,19 +82,20 @@ public class RESTApiCalls {
 			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());
-			response = request.put(prop.getProperty("placeOrderURL")+RequestData.get("OrderID")+prop.getProperty("completeOrderURL"));
+			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("completeOrderURL"));
 			return response;
 		}
 
 		else if(RequestData.get("RequestType").contains("Fetch Order")){
+			RequestSpecification request = RestAssured.given();
 			/*requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());*/
-			response = request.get(prop.getProperty("placeOrderURL")+RequestData.get("OrderID"));
+			response = request.get(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID"));
 			return response;
 		}
 		else{
 
-			System.out.println("Request Data is not correct.");
+			System.out.println("Request Data is not correct.: "+ response.getStatusCode());
 			return null;
 		}
 		

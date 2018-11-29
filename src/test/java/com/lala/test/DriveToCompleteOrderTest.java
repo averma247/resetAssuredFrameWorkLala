@@ -5,9 +5,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.test.requests.DriveToCompleteOrder;
-import com.lala.test.requests.DriveToTakeOrder;
-import com.lala.test.requests.PlaceOrder;
+import com.lala.requests.DriveToCompleteOrder;
+import com.lala.requests.DriveToTakeOrder;
+import com.lala.requests.PlaceOrder;
 
 /**
  * Below execute the test cases to very APIs to process orders and 

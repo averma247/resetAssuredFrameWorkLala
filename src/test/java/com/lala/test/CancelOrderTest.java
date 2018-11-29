@@ -1,13 +1,20 @@
 package com.lala.test;
 
+import static com.lala.test.GlobalData.prop;
+
+import java.util.HashMap;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.lala.test.requests.CancelOrder;
-import com.lala.test.requests.PlaceOrder;
+import com.lala.requests.CancelOrder;
+import com.lala.requests.PlaceOrder;
+import com.lala.requests.RESTApiCalls;
+
+import io.restassured.response.Response;
 
 /**
  * Below execute the test cases to very APIs to process orders and 
@@ -31,13 +38,12 @@ public class CancelOrderTest {
 	}  
 
 
-	@Test(priority=6, enabled=true)
-	public void verifyCancelOrderNewOrder(){
+	@Test(priority=1, enabled=true)
+	public void verifyCancelNewOrder(){
 
 
-
-		System.out.println("Verifying Order state to Complete, Order is assiging state.");
-
+		System.out.println("Verifying Cancelling new Order, Placing a new order");
+		
 		int orderPlacedStatus=placeorder.placeNewOrder();
 		if(orderPlacedStatus==0){
 			System.out.println("Error while placing order, Try placing order manually.");
@@ -61,6 +67,29 @@ public class CancelOrderTest {
 		System.out.println("Test is Passed.");
 
 	}/*--END OF METHOD---*/
+	
+	@Test(priority=1, enabled=true)
+	public void verifyCancelExistingOrder(){
+
+
+		System.out.println("Verifying Cancelling and Existing Order, Placing a new order");
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Cancel Order");
+		RequestData.put("OrderID", prop.getProperty("existingOrderID"));
+		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
+		}
+
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		System.out.println("Test Case is Passed");
+
+
+	}/*--END OF METHOD---*/
+	
+	
 
 
 }/*--END OF CLASS---*/

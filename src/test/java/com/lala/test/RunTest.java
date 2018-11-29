@@ -7,11 +7,11 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.lala.test.requests.CancelOrder;
-import com.lala.test.requests.DriveToCompleteOrder;
-import com.lala.test.requests.DriveToTakeOrder;
-import com.lala.test.requests.FetchOrder;
-import com.lala.test.requests.PlaceOrder;
+import com.lala.requests.CancelOrder;
+import com.lala.requests.DriveToCompleteOrder;
+import com.lala.requests.DriveToTakeOrder;
+import com.lala.requests.FetchOrder;
+import com.lala.requests.PlaceOrder;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

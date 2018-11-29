@@ -6,7 +6,7 @@
     <failure type="java.lang.AssertionError" message="Test is failed, status code not matched please check you GET request payload">
       <![CDATA[java.lang.AssertionError: Test is failed, status code not matched please check you GET request payload
 	at org.testng.Assert.fail(Assert.java:94)
-	at com.lala.test.requests.FetchOrder.verifyStatusCode(FetchOrder.java:42)
+	at com.lala.requests.FetchOrder.verifyStatusCode(FetchOrder.java:42)
 	at com.lala.test.RunTest.verifyFetchOrderWhenOrderDoesNotExist(RunTest.java:123)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)

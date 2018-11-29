@@ -1,4 +1,4 @@
-package com.lala.test.requests;
+package com.lala.requests;
 
 import static com.lala.test.GlobalData.prop;
 import static io.restassured.RestAssured.put;

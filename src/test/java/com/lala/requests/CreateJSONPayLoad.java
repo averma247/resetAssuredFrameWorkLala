@@ -1,4 +1,4 @@
-package com.lala.test.requests;
+package com.lala.requests;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
