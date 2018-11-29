@@ -34,7 +34,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 
 
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyNewOrder(){
 
 		System.out.println("Verfying New Order Flow with Valid Data.");

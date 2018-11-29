@@ -34,7 +34,7 @@ public class FetchOrderTest extends RESTApiCalls {
 	}  
 
 
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderForNewOrder(){
 
 		System.out.println("Verifying Fetch order for New Order");
@@ -57,7 +57,7 @@ public class FetchOrderTest extends RESTApiCalls {
 	}/*--END OF METHOD---*/
 	
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderWhenOrderExist(){
 
 		System.out.println("Verifying Fetch order for already existing order");

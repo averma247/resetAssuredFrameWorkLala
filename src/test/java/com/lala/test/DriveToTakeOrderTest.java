@@ -36,7 +36,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 	}  
 
 
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeOrder(){
 		
 		System.out.println("Verifying Take away new order ");
@@ -58,7 +58,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 	}/*--END OF METHOD---*/
 	
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeExistingOrder(){
 		
 		System.out.println("Verifying Take away Existing order ");
@@ -79,7 +79,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 	}/*--END OF METHOD---*/
 	
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyCancelledOrder(){
 		
 		System.out.println("Verifying Take away already cancelled OrderID ");
@@ -100,7 +100,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 	}/*--END OF METHOD---*/
 	
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyCompletedOrder(){
 		
 		System.out.println("Verifying Take away operationon on Completed OrderID ");
@@ -120,7 +120,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 
 	}/*--END OF METHOD---*/
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyOnGoingOrder(){
 		
 		System.out.println("Verifying Take away already ongoing status OrderID ");

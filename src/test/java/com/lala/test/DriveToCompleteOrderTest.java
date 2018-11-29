@@ -23,7 +23,6 @@ import io.restassured.response.Response;
 
 public class DriveToCompleteOrderTest extends RESTApiCalls{
 
-	private PlaceOrderTest placeorder=new PlaceOrderTest();	
 	private DriveToTakeOrderTest drivetotakeorder= new DriveToTakeOrderTest();
 
 	@BeforeTest
@@ -34,7 +33,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 	}  
 
 
-	@Test(priority=5, enabled=false)
+	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForNewOrder(){
 
 		System.out.println("Placing New Order and Changing order status to Ongoing");
@@ -56,7 +55,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 	}/*--END OF METHOD---*/
 
 
-	@Test(priority=5, enabled=false)
+	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForNonExistingOrder(){
 
 		System.out.println("Verifying flow for order doesnot exist.");			
@@ -77,7 +76,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 	}/*--END OF METHOD---*/
 
 
-	@Test(priority=5, enabled=false)
+	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForOnderOnAssignedState(){
 
 		System.out.println("Verifying flow for order on Assigned state.");			
@@ -98,7 +97,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 	}/*--END OF METHOD---*/
 
 
-	@Test(priority=5, enabled=false)
+	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForCompletedOrder(){
 
 		System.out.println("Verifying flow for order on Assigned state.");			
@@ -120,7 +119,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 
 
 
-	@Test(priority=5, enabled=false)
+	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForCancelOrder(){
 
 		System.out.println("Verifying flow for order on Cancelled state.");			

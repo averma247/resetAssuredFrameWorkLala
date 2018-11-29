@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-lala_Rest_Api_Testing">
-              <span class="suite-name border-passed">lala Rest Api Testing</span>
+              <span class="suite-name border-failed">lala Rest Api Testing</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">23 methods, 2 failed,   21 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-lala_Rest_Api_Testing" class="hide-methods failed suite-lala_Rest_Api_Testing"> (hide)</a> <!-- hide-methods failed suite-lala_Rest_Api_Testing -->
+                      <a href="#" panel-name="suite-lala_Rest_Api_Testing" class="show-methods failed suite-lala_Rest_Api_Testing"> (show)</a> <!-- show-methods failed suite-lala_Rest_Api_Testing -->
+                    </span>
+                    <div class="method-list-content failed suite-lala_Rest_Api_Testing">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToTakeOrderTest" hash-for-method="verifyDriveToTakeExistingOrder">verifyDriveToTakeExistingOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.PlaceOrderTest" hash-for-method="verifyFutureOrder">verifyFutureOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-lala_Rest_Api_Testing -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +121,107 @@
                     <div class="method-list-content passed suite-lala_Rest_Api_Testing">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelExistingOrder">verifyCancelExistingOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelNewOrder">verifyCancelNewOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelNonExistingOrder">verifyCancelNonExistingOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelOrderForAlreadyCancelledOrder">verifyCancelOrderForAlreadyCancelledOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelOrderForCompletedOrder">verifyCancelOrderForCompletedOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelOrderForOnGoingOrder">verifyCancelOrderForOnGoingOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToCompleteOrderTest" hash-for-method="verifyDriveToCompleteForCancelOrder">verifyDriveToCompleteForCancelOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToCompleteOrderTest" hash-for-method="verifyDriveToCompleteForCompletedOrder">verifyDriveToCompleteForCompletedOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToCompleteOrderTest" hash-for-method="verifyDriveToCompleteForNewOrder">verifyDriveToCompleteForNewOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToCompleteOrderTest" hash-for-method="verifyDriveToCompleteForNonExistingOrder">verifyDriveToCompleteForNonExistingOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToCompleteOrderTest" hash-for-method="verifyDriveToCompleteForOnderOnAssignedState">verifyDriveToCompleteForOnderOnAssignedState</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToTakeOrderTest" hash-for-method="verifyDriveToTakeAlreadyCancelledOrder">verifyDriveToTakeAlreadyCancelledOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToTakeOrderTest" hash-for-method="verifyDriveToTakeAlreadyCompletedOrder">verifyDriveToTakeAlreadyCompletedOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToTakeOrderTest" hash-for-method="verifyDriveToTakeAlreadyOnGoingOrder">verifyDriveToTakeAlreadyOnGoingOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToTakeOrderTest" hash-for-method="verifyDriveToTakeOnOrderDoesNotExist">verifyDriveToTakeOnOrderDoesNotExist</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.DriveToTakeOrderTest" hash-for-method="verifyDriveToTakeOrder">verifyDriveToTakeOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.FetchOrderTest" hash-for-method="verifyFetchOrderForNewOrder">verifyFetchOrderForNewOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.FetchOrderTest" hash-for-method="verifyFetchOrderWhenOrderDoesNotExist">verifyFetchOrderWhenOrderDoesNotExist</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.FetchOrderTest" hash-for-method="verifyFetchOrderWhenOrderExist">verifyFetchOrderWhenOrderExist</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.PlaceOrderTest" hash-for-method="verifyNewOrder">verifyNewOrder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.PlaceOrderTest" hash-for-method="verifyNewOrderWithInvalidPayload">verifyNewOrderWithInvalidPayload</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-lala_Rest_Api_Testing -->
@@ -117,6 +236,44 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-lala_Rest_Api_Testing" class="panel lala_Rest_Api_Testing">
+          <div class="suite-lala_Rest_Api_Testing-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.lala.test.DriveToTakeOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToTakeExistingOrder">
+                  </a> <!-- verifyDriveToTakeExistingOrder -->
+                  <span class="method-name">verifyDriveToTakeExistingOrder</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.lala.test.DriveToTakeOrderTest.verifyDriveToTakeExistingOrder(DriveToTakeOrderTest.java:76)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-lala_Rest_Api_Testing-class-failed -->
+          <div class="suite-lala_Rest_Api_Testing-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.lala.test.PlaceOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFutureOrder">
+                  </a> <!-- verifyFutureOrder -->
+                  <span class="method-name">verifyFutureOrder</span>
+                  <div class="stack-trace">java.lang.AssertionError: Test is failed, Error while placing order, Please check by placing order manually.
+	at com.lala.test.PlaceOrderTest.verifyFutureOrder(PlaceOrderTest.java:73)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-lala_Rest_Api_Testing-class-failed -->
           <div class="suite-lala_Rest_Api_Testing-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -125,9 +282,181 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="verifyDriveToCompleteForCancelOrder">
+                  </a> <!-- verifyDriveToCompleteForCancelOrder -->
+                  <span class="method-name">verifyDriveToCompleteForCancelOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToCompleteForCompletedOrder">
+                  </a> <!-- verifyDriveToCompleteForCompletedOrder -->
+                  <span class="method-name">verifyDriveToCompleteForCompletedOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToCompleteForNewOrder">
+                  </a> <!-- verifyDriveToCompleteForNewOrder -->
+                  <span class="method-name">verifyDriveToCompleteForNewOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="verifyDriveToCompleteForNonExistingOrder">
                   </a> <!-- verifyDriveToCompleteForNonExistingOrder -->
                   <span class="method-name">verifyDriveToCompleteForNonExistingOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToCompleteForOnderOnAssignedState">
+                  </a> <!-- verifyDriveToCompleteForOnderOnAssignedState -->
+                  <span class="method-name">verifyDriveToCompleteForOnderOnAssignedState</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-lala_Rest_Api_Testing-class-passed -->
+          <div class="suite-lala_Rest_Api_Testing-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.lala.test.FetchOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFetchOrderForNewOrder">
+                  </a> <!-- verifyFetchOrderForNewOrder -->
+                  <span class="method-name">verifyFetchOrderForNewOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFetchOrderWhenOrderDoesNotExist">
+                  </a> <!-- verifyFetchOrderWhenOrderDoesNotExist -->
+                  <span class="method-name">verifyFetchOrderWhenOrderDoesNotExist</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyFetchOrderWhenOrderExist">
+                  </a> <!-- verifyFetchOrderWhenOrderExist -->
+                  <span class="method-name">verifyFetchOrderWhenOrderExist</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-lala_Rest_Api_Testing-class-passed -->
+          <div class="suite-lala_Rest_Api_Testing-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.lala.test.DriveToTakeOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToTakeAlreadyCancelledOrder">
+                  </a> <!-- verifyDriveToTakeAlreadyCancelledOrder -->
+                  <span class="method-name">verifyDriveToTakeAlreadyCancelledOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToTakeAlreadyCompletedOrder">
+                  </a> <!-- verifyDriveToTakeAlreadyCompletedOrder -->
+                  <span class="method-name">verifyDriveToTakeAlreadyCompletedOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToTakeAlreadyOnGoingOrder">
+                  </a> <!-- verifyDriveToTakeAlreadyOnGoingOrder -->
+                  <span class="method-name">verifyDriveToTakeAlreadyOnGoingOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToTakeOnOrderDoesNotExist">
+                  </a> <!-- verifyDriveToTakeOnOrderDoesNotExist -->
+                  <span class="method-name">verifyDriveToTakeOnOrderDoesNotExist</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDriveToTakeOrder">
+                  </a> <!-- verifyDriveToTakeOrder -->
+                  <span class="method-name">verifyDriveToTakeOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-lala_Rest_Api_Testing-class-passed -->
+          <div class="suite-lala_Rest_Api_Testing-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.lala.test.CancelOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelExistingOrder">
+                  </a> <!-- verifyCancelExistingOrder -->
+                  <span class="method-name">verifyCancelExistingOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelNewOrder">
+                  </a> <!-- verifyCancelNewOrder -->
+                  <span class="method-name">verifyCancelNewOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelNonExistingOrder">
+                  </a> <!-- verifyCancelNonExistingOrder -->
+                  <span class="method-name">verifyCancelNonExistingOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelOrderForAlreadyCancelledOrder">
+                  </a> <!-- verifyCancelOrderForAlreadyCancelledOrder -->
+                  <span class="method-name">verifyCancelOrderForAlreadyCancelledOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelOrderForCompletedOrder">
+                  </a> <!-- verifyCancelOrderForCompletedOrder -->
+                  <span class="method-name">verifyCancelOrderForCompletedOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyCancelOrderForOnGoingOrder">
+                  </a> <!-- verifyCancelOrderForOnGoingOrder -->
+                  <span class="method-name">verifyCancelOrderForOnGoingOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-lala_Rest_Api_Testing-class-passed -->
+          <div class="suite-lala_Rest_Api_Testing-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.lala.test.PlaceOrderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNewOrder">
+                  </a> <!-- verifyNewOrder -->
+                  <span class="method-name">verifyNewOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyNewOrderWithInvalidPayload">
+                  </a> <!-- verifyNewOrderWithInvalidPayload -->
+                  <span class="method-name">verifyNewOrderWithInvalidPayload</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,7 +473,11 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;lala Rest Api Testing&quot;&gt;
   &lt;test name=&quot;lalaTestNGTest&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.lala.test.PlaceOrderTest&quot;/&gt;
+      &lt;class name=&quot;com.lala.test.FetchOrderTest&quot;/&gt;
+      &lt;class name=&quot;com.lala.test.DriveToTakeOrderTest&quot;/&gt;
       &lt;class name=&quot;com.lala.test.DriveToCompleteOrderTest&quot;/&gt;
+      &lt;class name=&quot;com.lala.test.CancelOrderTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- lalaTestNGTest --&gt;
 &lt;/suite&gt; &lt;!-- lala Rest Api Testing --&gt;
@@ -158,7 +491,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">lalaTestNGTest (1 class)</span>
+                <span class="test-name">lalaTestNGTest (5 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +517,104 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(23);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyDriveToCompleteForNonExistingOrder')
-data.setCell(0, 2, 'com.lala.test.DriveToCompleteOrderTest')
-data.setCell(0, 3, 942);
+data.setCell(0, 1, 'verifyNewOrder')
+data.setCell(0, 2, 'com.lala.test.PlaceOrderTest')
+data.setCell(0, 3, 1753);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyFutureOrder')
+data.setCell(1, 2, 'com.lala.test.PlaceOrderTest')
+data.setCell(1, 3, 1358);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyDriveToCompleteForNewOrder')
+data.setCell(2, 2, 'com.lala.test.DriveToCompleteOrderTest')
+data.setCell(2, 3, 479);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyDriveToTakeOrder')
+data.setCell(3, 2, 'com.lala.test.DriveToTakeOrderTest')
+data.setCell(3, 3, 444);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'verifyFetchOrderForNewOrder')
+data.setCell(4, 2, 'com.lala.test.FetchOrderTest')
+data.setCell(4, 3, 428);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyCancelNewOrder')
+data.setCell(5, 2, 'com.lala.test.CancelOrderTest')
+data.setCell(5, 3, 388);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyNewOrderWithInvalidPayload')
+data.setCell(6, 2, 'com.lala.test.PlaceOrderTest')
+data.setCell(6, 3, 36);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyDriveToCompleteForCompletedOrder')
+data.setCell(7, 2, 'com.lala.test.DriveToCompleteOrderTest')
+data.setCell(7, 3, 23);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'verifyCancelOrderForAlreadyCancelledOrder')
+data.setCell(8, 2, 'com.lala.test.CancelOrderTest')
+data.setCell(8, 3, 21);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'verifyCancelOrderForOnGoingOrder')
+data.setCell(9, 2, 'com.lala.test.CancelOrderTest')
+data.setCell(9, 3, 20);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyFetchOrderWhenOrderExist')
+data.setCell(10, 2, 'com.lala.test.FetchOrderTest')
+data.setCell(10, 3, 20);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyDriveToTakeAlreadyCancelledOrder')
+data.setCell(11, 2, 'com.lala.test.DriveToTakeOrderTest')
+data.setCell(11, 3, 20);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'verifyCancelNonExistingOrder')
+data.setCell(12, 2, 'com.lala.test.CancelOrderTest')
+data.setCell(12, 3, 20);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'verifyCancelExistingOrder')
+data.setCell(13, 2, 'com.lala.test.CancelOrderTest')
+data.setCell(13, 3, 17);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'verifyDriveToTakeAlreadyCompletedOrder')
+data.setCell(14, 2, 'com.lala.test.DriveToTakeOrderTest')
+data.setCell(14, 3, 17);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'verifyDriveToTakeAlreadyOnGoingOrder')
+data.setCell(15, 2, 'com.lala.test.DriveToTakeOrderTest')
+data.setCell(15, 3, 16);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'verifyDriveToCompleteForCancelOrder')
+data.setCell(16, 2, 'com.lala.test.DriveToCompleteOrderTest')
+data.setCell(16, 3, 16);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'verifyDriveToTakeExistingOrder')
+data.setCell(17, 2, 'com.lala.test.DriveToTakeOrderTest')
+data.setCell(17, 3, 16);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'verifyDriveToCompleteForNonExistingOrder')
+data.setCell(18, 2, 'com.lala.test.DriveToCompleteOrderTest')
+data.setCell(18, 3, 15);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'verifyDriveToTakeOnOrderDoesNotExist')
+data.setCell(19, 2, 'com.lala.test.DriveToTakeOrderTest')
+data.setCell(19, 3, 14);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'verifyCancelOrderForCompletedOrder')
+data.setCell(20, 2, 'com.lala.test.CancelOrderTest')
+data.setCell(20, 3, 14);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'verifyDriveToCompleteForOnderOnAssignedState')
+data.setCell(21, 2, 'com.lala.test.DriveToCompleteOrderTest')
+data.setCell(21, 3, 14);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'verifyFetchOrderWhenOrderDoesNotExist')
+data.setCell(22, 2, 'com.lala.test.FetchOrderTest')
+data.setCell(22, 3, 13);
 window.suiteTableData['lala_Rest_Api_Testing']= { tableData: data, tableDiv: 'times-div-lala_Rest_Api_Testing'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 942 ms</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-lala_Rest_Api_Testing">
               </div> <!-- times-div-lala_Rest_Api_Testing -->
             </div> <!-- times-div -->
@@ -208,16 +629,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-lala_Rest_Api_Testing" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.lala.test.DriveToCompleteOrderTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyDriveToCompleteForNewOrder</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-lala_Rest_Api_Testing" class="panel">
@@ -231,9 +645,155 @@ return data;
                 <span class="method-name">suitelalaTestNGTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lala.test.FetchOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">8 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lala.test.PlaceOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">8 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyFutureOrder</span>
+                <span class="method-start">16 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyNewOrder</span>
+                <span class="method-start">1376 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyNewOrderWithInvalidPayload</span>
+                <span class="method-start">3130 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lala.test.FetchOrderTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyFetchOrderForNewOrder</span>
+                <span class="method-start">3169 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFetchOrderWhenOrderDoesNotExist</span>
+                <span class="method-start">3600 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyFetchOrderWhenOrderExist</span>
+                <span class="method-start">3614 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lala.test.DriveToTakeOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">3635 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToTakeAlreadyCancelledOrder</span>
+                <span class="method-start">3636 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">3658 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToTakeAlreadyCompletedOrder</span>
+                <span class="method-start">3659 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">3677 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToTakeAlreadyOnGoingOrder</span>
+                <span class="method-start">3677 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">3695 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyDriveToTakeExistingOrder</span>
+                <span class="method-start">3696 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">3713 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToTakeOnOrderDoesNotExist</span>
+                <span class="method-start">3713 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">3727 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToTakeOrder</span>
+                <span class="method-start">3728 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lala.test.DriveToCompleteOrderTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToCompleteForCancelOrder</span>
+                <span class="method-start">4173 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToCompleteForCompletedOrder</span>
+                <span class="method-start">4190 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToCompleteForNewOrder</span>
+                <span class="method-start">4214 ms</span>
+              </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyDriveToCompleteForNonExistingOrder</span>
-                <span class="method-start">12 ms</span>
+                <span class="method-start">4693 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyDriveToCompleteForOnderOnAssignedState</span>
+                <span class="method-start">4708 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lala.test.CancelOrderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">suitelalaTestNGTest</span>
+                <span class="method-start">4722 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelExistingOrder</span>
+                <span class="method-start">4723 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelNewOrder</span>
+                <span class="method-start">4740 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelNonExistingOrder</span>
+                <span class="method-start">5128 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelOrderForAlreadyCancelledOrder</span>
+                <span class="method-start">5149 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelOrderForCompletedOrder</span>
+                <span class="method-start">5170 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyCancelOrderForOnGoingOrder</span>
+                <span class="method-start">5184 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
