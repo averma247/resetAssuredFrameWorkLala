@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-lala_Rest_Api_Testing">
-              <span class="suite-name border-failed">lala Rest Api Testing</span>
+              <span class="suite-name border-passed">lala Rest Api Testing</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-lala_Rest_Api_Testing" class="hide-methods failed suite-lala_Rest_Api_Testing"> (hide)</a> <!-- hide-methods failed suite-lala_Rest_Api_Testing -->
-                      <a href="#" panel-name="suite-lala_Rest_Api_Testing" class="show-methods failed suite-lala_Rest_Api_Testing"> (show)</a> <!-- show-methods failed suite-lala_Rest_Api_Testing -->
-                    </span>
-                    <div class="method-list-content failed suite-lala_Rest_Api_Testing">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.PlaceOrderTest" hash-for-method="verifyFutureOrder">verifyFutureOrder</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-lala_Rest_Api_Testing -->
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -114,11 +100,6 @@
                       <a href="#" panel-name="suite-lala_Rest_Api_Testing" class="show-methods passed suite-lala_Rest_Api_Testing"> (show)</a> <!-- show-methods passed suite-lala_Rest_Api_Testing -->
                     </span>
                     <div class="method-list-content passed suite-lala_Rest_Api_Testing">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.CancelOrderTest" hash-for-method="verifyCancelOrder">verifyCancelOrder</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-lala_Rest_Api_Testing" title="com.lala.test.PlaceOrderTest" hash-for-method="verifyNewOrder">verifyNewOrder</a> <!-- method navigator-link -->
@@ -136,25 +117,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-lala_Rest_Api_Testing" class="panel lala_Rest_Api_Testing">
-          <div class="suite-lala_Rest_Api_Testing-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.lala.test.PlaceOrderTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyFutureOrder">
-                  </a> <!-- verifyFutureOrder -->
-                  <span class="method-name">verifyFutureOrder</span>
-                  <div class="stack-trace">java.lang.AssertionError: Test is failed, Error while placing order, please check server connection.
-	at com.lala.test.PlaceOrderTest.verifyFutureOrder(PlaceOrderTest.java:78)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-lala_Rest_Api_Testing-class-failed -->
           <div class="suite-lala_Rest_Api_Testing-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -166,21 +128,6 @@
                   <a name="verifyNewOrder">
                   </a> <!-- verifyNewOrder -->
                   <span class="method-name">verifyNewOrder</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-lala_Rest_Api_Testing-class-passed -->
-          <div class="suite-lala_Rest_Api_Testing-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.lala.test.CancelOrderTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyCancelOrder">
-                  </a> <!-- verifyCancelOrder -->
-                  <span class="method-name">verifyCancelOrder</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,7 +144,6 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;lala Rest Api Testing&quot;&gt;
   &lt;test name=&quot;lalaTestNGTest&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.lala.test.CancelOrderTest&quot;/&gt;
       &lt;class name=&quot;com.lala.test.PlaceOrderTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- lalaTestNGTest --&gt;
@@ -212,7 +158,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">lalaTestNGTest (2 classes)</span>
+                <span class="test-name">lalaTestNGTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -238,19 +184,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyCancelOrder')
-data.setCell(0, 2, 'com.lala.test.CancelOrderTest')
-data.setCell(0, 3, 1681);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyNewOrder')
-data.setCell(1, 2, 'com.lala.test.PlaceOrderTest')
-data.setCell(1, 3, 231);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyFutureOrder')
-data.setCell(2, 2, 'com.lala.test.PlaceOrderTest')
-data.setCell(2, 3, 179);
+data.setCell(0, 1, 'verifyNewOrder')
+data.setCell(0, 2, 'com.lala.test.PlaceOrderTest')
+data.setCell(0, 3, 2279);
 window.suiteTableData['lala_Rest_Api_Testing']= { tableData: data, tableDiv: 'times-div-lala_Rest_Api_Testing'}
 return data;
 }
@@ -286,29 +224,9 @@ return data;
                 <span class="method-name">suitelalaTestNGTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.lala.test.CancelOrderTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">suitelalaTestNGTest</span>
-                <span class="method-start">10 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">verifyCancelOrder</span>
-                <span class="method-start">13 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.lala.test.PlaceOrderTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifyFutureOrder</span>
-                <span class="method-start">1697 ms</span>
-              </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyNewOrder</span>
-                <span class="method-start">1879 ms</span>
+                <span class="method-start">13 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

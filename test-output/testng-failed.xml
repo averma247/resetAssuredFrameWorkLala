@@ -3,23 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [lala Rest Api Testing]">
   <test name="lalaTestNGTest">
     <classes>
-      <class name="com.lala.test.CancelOrderTest"/>
       <class name="com.lala.test.PlaceOrderTest"/>
     </classes>
   </test> <!-- lalaTestNGTest -->
-  <test name="lalaTestNGTest(failed)">
-    <classes>
-      <class name="com.lala.test.PlaceOrderTest">
-        <methods>
-          <include name="verifyFutureOrder"/>
-          <include name="suitelalaTestNGTest"/>
-        </methods>
-      </class> <!-- com.lala.test.PlaceOrderTest -->
-      <class name="com.lala.test.CancelOrderTest">
-        <methods>
-          <include name="suitelalaTestNGTest"/>
-        </methods>
-      </class> <!-- com.lala.test.CancelOrderTest -->
-    </classes>
-  </test> <!-- lalaTestNGTest(failed) -->
 </suite> <!-- Failed suite [lala Rest Api Testing] -->

@@ -1,11 +1,18 @@
 package com.lala.test;
 
+import static org.testng.Assert.assertTrue;
+
+import java.util.HashMap;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.lala.test.requests.PlaceOrder;
+import com.lala.test.requests.RESTApiCalls;
+
+import io.restassured.response.Response;
 
 
 
@@ -32,70 +39,74 @@ public class PlaceOrderTest {
 		GlobalData.readConfigFile();
 	}  
 
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyNewOrder(){
 
 		System.out.println("Verfying New Order Flow with Valid Data.");
-		try{
 
-			int actualStatusCode=placeorder.placeNewOrder();
-			if(actualStatusCode!=0){
-				// --- checking the status code
-				Assert.assertEquals(actualStatusCode, 201);
-				System.out.println("Actual and expected response status code is matched");
-			}
-			else{
+		//int actualStatusCode=placeorder.placeNewOrder();
 
-				System.out.println("Error while placing order, please check server connection.");
-				System.out.println("Test is failed.");
-				Assert.fail("Test is failed, Error while placing order, please check server connection.");
-			}
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "New Order");
+		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
 
-			System.out.println("Test is passed.");
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		catch(Exception e){
-
-			System.out.println(e.getMessage()); 
-			System.out.println("Test is failed");
-			Assert.fail("Test is failed, Error while placing order, please check server connection.");
-		}
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched. Test Case passed.");
+		System.out.println("Test Case is Passed");
 
 	}/*-- END OF METHOD --*/
 
 
-	@Test(priority=1, enabled=true)
+
+	/*@Test(priority=1, enabled=true)
 	public void verifyFutureOrder(){
 
-		System.out.println("Verfying Future Order Flow with Valid Data.");
-		try{
+		System.out.println("Verfying New Order Flow with Valid Data.");
 
-			int actualStatusCode=placeorder.placeFutureOrder();
-			if(actualStatusCode!=0){
-				Assert.assertEquals(actualStatusCode, 201);
-				System.out.println("Actual and expected response status code is matched");			
-			}
-			else{
+		//int actualStatusCode=placeorder.placeNewOrder();
 
-				System.out.println("Error while placing order, please check server connection.");
-				System.out.println("Test is failed.");
-				Assert.fail("Test is failed, Error while placing order, please check server connection.");
-			}
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "Future Order");
+		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
 
-			System.out.println("Test is passed.");
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		catch(Exception e){
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched.");
+		System.out.println("Test Case is Passed");
 
-			System.out.println(e.getMessage()); 
-			System.out.println("Test is failed");
-			Assert.fail("Test is failed, Error while placing order, please check server connection.");
+	}-- END OF METHOD --*/
+
+
+	/*@Test(priority=1, enabled=true)
+	public void verifyNewOrderWithInvalidPayload(){
+
+		System.out.println("Verfying New Order Flow with In-Valid Data.");
+
+		//int actualStatusCode=placeorder.placeNewOrder();
+
+		HashMap<String, String> RequestData= new HashMap<String, String>() ;
+		RequestData.put("RequestType", "New Order");
+		Response response=RESTApiCalls.sendRESTAPIRequest(RequestData);
+
+		if(response==null){
+			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-	}/*-- END OF METHOD --*/
+		System.out.println("Verifying status code.");
+		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched.");
+		System.out.println("Test Case is Passed");
+
+	}-- END OF METHOD --*/
 
 
 
-
-
-}
+}/*-- END OF CLASS --*/

@@ -1,24 +1,16 @@
 package com.lala.test.requests;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Properties;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class CreateJSONPayLoad {
 
@@ -128,7 +120,7 @@ public class CreateJSONPayLoad {
 				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/placeorderpayload.json")));
 
 				JSONObject placeOrderJSON = (JSONObject) obj;
-
+				System.out.println("Payload data for stops");
 				System.out.println(placeOrderJSON.get("stops"));
 
 				JSONArray storelocation = (JSONArray) placeOrderJSON.get("stops");
@@ -214,11 +206,11 @@ public class CreateJSONPayLoad {
 		return placeOrderJSON;
 	}
 
-
+/*
 	public static void main (String args[]) throws FileNotFoundException, IOException, ParseException{
 
 		JSONObject placeOrderJSON=getPlaceOrderPayloadFromFile();
 		System.out.println("Place Order JSON payload: "+ placeOrderJSON.toJSONString());
 
-	}
+	}*/
 }

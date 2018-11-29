@@ -23,11 +23,13 @@ public class RESTApiCalls {
 	public static Response sendRESTAPIRequest(HashMap<String,String> RequestData){
 
 		RestAssured.baseURI=prop.getProperty("baseURL");
-
+		
 
 		if(RequestData.get("RequestType").contains("New Order")){
+			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("NewOrder");
 			request.body(requestParams.toJSONString());
+			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
 			jsonPathEvaluator = response.jsonPath();
 			NewOrderID=(jsonPathEvaluator.get("id")).toString();
@@ -41,8 +43,28 @@ public class RESTApiCalls {
 				return null;
 			}
 		}
+		
+		else if(RequestData.get("RequestType").contains("Future Order")){
+			RequestSpecification request = RestAssured.given();
+			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("FutureOrder");
+			request.body(requestParams.toJSONString());
+			System.out.println("JSON payload: "+ requestParams.toJSONString() );
+			response = request.post(prop.getProperty("placeOrderURL"));
+			jsonPathEvaluator = response.jsonPath();
+			NewOrderID=(jsonPathEvaluator.get("id")).toString();
+			if(NewOrderID!=null){
 
+				System.out.println("New Order ID is: "+NewOrderID);
+			}
+			else{
+
+				System.out.println("New Order ID is null");
+				return null;
+			}
+		}
+		
 		else if(RequestData.get("RequestType").contains("Cancel Order")){
+			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Cancel");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+RequestData.get("OrderID")+prop.getProperty("cancelOrderURL"));
@@ -50,6 +72,7 @@ public class RESTApiCalls {
 		}
 
 		else if(RequestData.get("RequestType").contains("Take Away")){
+			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Takeaway");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+RequestData.get("OrderID")+prop.getProperty("takeawayOrderURL"));
@@ -57,6 +80,7 @@ public class RESTApiCalls {
 		}
 
 		else if(RequestData.get("RequestType").contains("Complete Order")){
+			RequestSpecification request = RestAssured.given();
 			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+RequestData.get("OrderID")+prop.getProperty("completeOrderURL"));
@@ -64,8 +88,8 @@ public class RESTApiCalls {
 		}
 
 		else if(RequestData.get("RequestType").contains("Fetch Order")){
-			requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
-			request.body(requestParams.toJSONString());
+			/*requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
+			request.body(requestParams.toJSONString());*/
 			response = request.get(prop.getProperty("placeOrderURL")+RequestData.get("OrderID"));
 			return response;
 		}
@@ -74,24 +98,43 @@ public class RESTApiCalls {
 			System.out.println("Request Data is not correct.");
 			return null;
 		}
-		/*int statusCode = response.getStatusCode();
-		System.out.println("Status Code is: "+statusCode);
-		String msgBody= response.body().asString();
-		System.out.println("Message Body: "+msgBody);
-
-		JsonPath jsonPathEvaluator = response.jsonPath();
-		System.out.println("Order ID from Response " + jsonPathEvaluator.get("id"));
-		NewOrderID=(jsonPathEvaluator.get("id")).toString();
-		System.out.println("Response Data " + jsonPathEvaluator.prettyPrint());
-		return false;*/
-		return null;
+		
+		return response;
 
 	}/*--- END OF MSG*/
 
 
 
-	
-	
+	public static boolean verifyResponseCode(Response response, int expectedStatusCode){
 
+		System.out.println("Verifying status code came in response.");	
+		if(response.getStatusCode()==expectedStatusCode){
+			System.out.println("Status code is matched.");
+			return true;
+		}
+		else{
+			System.out.println("Status code is not matched.");
+			return false;
+		}
+
+	}
+
+	public static boolean verifyOrderIDInResponse(Response response, String ExpectedOrderID){
+		JsonPath jsonPathEvaluator = response.jsonPath();
+		System.out.println("Order ID from Response " + jsonPathEvaluator.get("id"));
+		System.out.println("Expected Order ID: "+ ExpectedOrderID);
+		System.out.println("Response Data " + jsonPathEvaluator.prettyPrint());
+		
+		if(ExpectedOrderID.equalsIgnoreCase((String) jsonPathEvaluator.get("id"))){
+			
+			System.out.println("Order ID in the response is same.");
+			return true;
+			
+		}
+		else{
+			System.out.println("Order ID in the response is different: "+jsonPathEvaluator.get("id")+"from"+" Expected Order ID: "+ExpectedOrderID);
+			return false;
+		}
+	}
 
 }
