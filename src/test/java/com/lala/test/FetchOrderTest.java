@@ -39,7 +39,7 @@ public class FetchOrderTest extends RESTApiCalls {
 
 		System.out.println("Verifying Fetch order for New Order");
 		placeorder.verifyNewOrder();
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", NewOrderID);
@@ -55,8 +55,8 @@ public class FetchOrderTest extends RESTApiCalls {
 
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderWhenOrderExist(){
 
@@ -76,8 +76,8 @@ public class FetchOrderTest extends RESTApiCalls {
 
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderWhenOrderDoesNotExist(){
 
@@ -94,10 +94,10 @@ public class FetchOrderTest extends RESTApiCalls {
 		System.out.println("Verifying status code.");
 		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 404));
 		System.out.println("Test Case completed");
-		
-		
+
+
 	}/*----------- END OF METHOD --------------------*/
-	
-	
+
+
 
 }

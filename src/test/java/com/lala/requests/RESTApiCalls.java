@@ -31,7 +31,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
 			jsonPathEvaluator = response.jsonPath();
-			
+
 			if((jsonPathEvaluator.get("id"))!=null){
 				NewOrderID=(jsonPathEvaluator.get("id")).toString();
 				System.out.println("New Order ID is: "+NewOrderID);
@@ -93,7 +93,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 			response = request.get(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID"));
 			return response;
 		}
-		
+
 		else if(RequestData.get("RequestType").contains("InValid Payload")){
 			RequestSpecification request = RestAssured.given();
 			requestParams = readyJSONPayloadFromFile("InValidPayload");
@@ -112,9 +112,9 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 				return null;
 			}
 		}
-		
-		
-		
+
+
+
 		else{
 
 			System.out.println("Request Data is not correct.: "+ response.getStatusCode());

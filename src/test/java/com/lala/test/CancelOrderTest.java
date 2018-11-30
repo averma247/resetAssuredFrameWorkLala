@@ -39,7 +39,7 @@ public class CancelOrderTest extends RESTApiCalls {
 
 
 		System.out.println("Verifying Cancelling new Order, Placing a new order");
-		
+
 		placeorder.verifyNewOrder();
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
@@ -53,10 +53,10 @@ public class CancelOrderTest extends RESTApiCalls {
 		System.out.println("Verifying status code.");
 		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
 		System.out.println("Test Case is Passed");
-		
-		
+
+
 	}/*--END OF METHOD---*/
-	
+
 	@Test(priority=1, enabled=true)
 	public void verifyCancelExistingOrder(){
 
@@ -77,8 +77,8 @@ public class CancelOrderTest extends RESTApiCalls {
 
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyCancelNonExistingOrder(){
 
@@ -98,8 +98,8 @@ public class CancelOrderTest extends RESTApiCalls {
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyCancelOrderForOnGoingOrder(){
 
@@ -119,8 +119,8 @@ public class CancelOrderTest extends RESTApiCalls {
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyCancelOrderForAlreadyCancelledOrder(){
 
@@ -140,8 +140,8 @@ public class CancelOrderTest extends RESTApiCalls {
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyCancelOrderForCompletedOrder(){
 
@@ -161,7 +161,7 @@ public class CancelOrderTest extends RESTApiCalls {
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
-	
+
 
 
 }/*--END OF CLASS---*/

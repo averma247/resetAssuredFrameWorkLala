@@ -15,7 +15,7 @@ import org.json.simple.parser.ParseException;
 
 public class CreateJSONPayLoad {
 
-	
+
 	public JSONObject readyJSONPayloadFromFile(String requestType)
 	{
 		//JSON parser object to parse read file
@@ -115,8 +115,8 @@ public class CreateJSONPayLoad {
 				return placeOrderJSON;
 
 			}
-			
-			
+
+
 			else if(requestType.contains("InValidPayload")){
 
 				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/invalidneworderpayload.json")));
@@ -180,7 +180,7 @@ public class CreateJSONPayLoad {
 		return placeOrderJSON;
 	}
 
-/*
+	/*
 	public static void main (String args[]) throws FileNotFoundException, IOException, ParseException{
 
 		JSONObject placeOrderJSON=getPlaceOrderPayloadFromFile();

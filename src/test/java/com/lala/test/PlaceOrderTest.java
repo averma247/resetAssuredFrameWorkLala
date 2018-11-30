@@ -51,8 +51,8 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		System.out.println("Verifying status code.");
 		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched. Test Case passed.");
-		
-		
+
+
 
 	}/*-- END OF METHOD --*/
 
@@ -75,7 +75,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		System.out.println("Verifying status code.");
 		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched.");
-		
+
 
 	}/*--- END OF METHOD --*/
 
@@ -92,7 +92,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 		if(response==null){
 			Assert.assertTrue(true,"Test is Passed, Providing valid error message.");
 		}
-		
+
 
 	}/*-- END OF METHOD --*/
 

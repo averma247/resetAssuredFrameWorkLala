@@ -38,15 +38,15 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeOrder(){
-		
+
 		System.out.println("Verifying Take away new order ");
 		placeorder.verifyNewOrder();
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID", GlobalData.NewOrderID);
 		Response response=sendRESTAPIRequest(RequestData);
-		
+
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
@@ -56,18 +56,18 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeExistingOrder(){
-		
+
 		System.out.println("Verifying Take away Existing order ");
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("existingOrderID"));
 		Response response=sendRESTAPIRequest(RequestData);
-		
+
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
@@ -77,18 +77,18 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("----------- Test Case is Completed -----------");
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyCancelledOrder(){
-		
+
 		System.out.println("Verifying Take away already cancelled OrderID ");
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("cancelledOrderID"));
 		Response response=sendRESTAPIRequest(RequestData);
-		
+
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
@@ -98,18 +98,18 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("----------- Test Case is Completed -----------");
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyCompletedOrder(){
-		
+
 		System.out.println("Verifying Take away operationon on Completed OrderID ");
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("completedOrderID"));
 		Response response=sendRESTAPIRequest(RequestData);
-		
+
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
@@ -119,17 +119,17 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("----------- Test Case is Completed -----------");
 
 	}/*--END OF METHOD---*/
-	
+
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyOnGoingOrder(){
-		
+
 		System.out.println("Verifying Take away already ongoing status OrderID ");
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("ongoingOrderID"));
 		Response response=sendRESTAPIRequest(RequestData);
-		
+
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
@@ -139,17 +139,17 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("----------- Test Case is Completed -----------");
 
 	}/*--END OF METHOD---*/
-	
+
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeOnOrderDoesNotExist(){
-		
+
 		System.out.println("Verifying Take away on Order doesnot exist ");
-		
+
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID","-1");
 		Response response=sendRESTAPIRequest(RequestData);
-		
+
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
@@ -159,7 +159,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("----------- Test Case is Completed -----------");
 
 	}/*--END OF METHOD---*/
-	
-	
+
+
 
 }
