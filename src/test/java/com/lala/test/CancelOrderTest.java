@@ -1,7 +1,7 @@
 package com.lala.test;
 
-import static com.lala.test.GlobalData.prop;
-import static com.lala.test.GlobalData.NewOrderID;
+import static com.lala.requests.GlobalData.NewOrderID;
+import static com.lala.requests.GlobalData.prop;
 
 import java.util.HashMap;
 
@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.lala.requests.GlobalData;
 import com.lala.requests.RESTApiCalls;
 
 import io.restassured.response.Response;

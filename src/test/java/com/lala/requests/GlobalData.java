@@ -1,4 +1,4 @@
-package com.lala.test;
+package com.lala.requests;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package com.lala.requests;
 
-import static com.lala.test.GlobalData.NewOrderID;
-import static com.lala.test.GlobalData.prop;
+import static com.lala.requests.GlobalData.NewOrderID;
+import static com.lala.requests.GlobalData.prop;
 import static io.restassured.RestAssured.get;
 
 import java.util.HashMap;
