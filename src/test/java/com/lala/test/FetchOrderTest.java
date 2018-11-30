@@ -43,14 +43,14 @@ public class FetchOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", NewOrderID);
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 		System.out.println("Test Case is Passed");
 
 
@@ -64,14 +64,14 @@ public class FetchOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", prop.getProperty("existingOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 		System.out.println("Test Case is Passed");
 
 
@@ -85,14 +85,14 @@ public class FetchOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", "-1");
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 404));
+		Assert.assertEquals(response.getStatusCode(),404);
 		System.out.println("Test Case completed");
 
 

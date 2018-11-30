@@ -5,20 +5,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class CreateJSONPayLoad {
+public class JSONPayLoadPraser {
 
 
-	public JSONObject readyJSONPayloadFromFile(String requestType)
+	public JSONObject readJSONPayloadFromFile(String requestType)
 	{
-		//JSON parser object to parse read file
+		//JSON parser object to read the JSON file.
 		JSONParser jsonParser = new JSONParser();
 
 		try
@@ -34,10 +31,6 @@ public class CreateJSONPayLoad {
 				JSONObject payloadlist = (JSONObject) obj;
 				System.out.println(payloadlist);
 
-				//Iterate over employee array
-				//payloadlist.forEach( emp -> parseEmployeeObject((Object)emp ));
-				parseEmployeeObject(payloadlist);
-
 				return payloadlist;            
 			}
 
@@ -52,10 +45,6 @@ public class CreateJSONPayLoad {
 				JSONObject payloadlist = (JSONObject) obj;
 				System.out.println(payloadlist);
 
-				//Iterate over employee array
-				//payloadlist.forEach( emp -> parseEmployeeObject((Object)emp ));
-				//parseEmployeeObject(payloadlist);
-
 				return payloadlist;            
 			}  
 
@@ -69,10 +58,6 @@ public class CreateJSONPayLoad {
 
 				JSONObject payloadlist = (JSONObject) obj;
 				System.out.println(payloadlist);
-
-				//Iterate over employee array
-				//payloadlist.forEach( emp -> parseEmployeeObject((Object)emp ));
-				//parseEmployeeObject(payloadlist);
 
 				return payloadlist;            
 			}  
@@ -144,47 +129,4 @@ public class CreateJSONPayLoad {
 		return null;
 
 	}
-
-	private static void parseEmployeeObject(JSONObject payloadlistdata)
-	{
-		//Get employee object within list
-		Long OrderID = (Long) payloadlistdata.get("id");
-		System.out.println(OrderID);
-
-		//Get employee first name
-		String firstName = (String) payloadlistdata.get("status");   
-		System.out.println(firstName);
-
-		//Get employee last name
-		String lastName = (String) payloadlistdata.get("cancelledAt"); 
-		System.out.println(lastName);
-
-	}
-
-	public static JSONObject getPlaceOrderPayloadFromFile() throws FileNotFoundException, IOException, ParseException{
-
-		JSONParser parser = new JSONParser();
-		Object obj = parser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/futureorderpayload.json")));
-
-		JSONObject placeOrderJSON = (JSONObject) obj;
-
-		System.out.println(placeOrderJSON.get("stops"));
-		System.out.println(placeOrderJSON.get("orderAt"));
-
-		JSONArray storelocation = (JSONArray) placeOrderJSON.get("stops");
-
-		Iterator<?> iterator = storelocation.iterator();
-		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
-		}
-		return placeOrderJSON;
-	}
-
-	/*
-	public static void main (String args[]) throws FileNotFoundException, IOException, ParseException{
-
-		JSONObject placeOrderJSON=getPlaceOrderPayloadFromFile();
-		System.out.println("Place Order JSON payload: "+ placeOrderJSON.toJSONString());
-
-	}*/
 }

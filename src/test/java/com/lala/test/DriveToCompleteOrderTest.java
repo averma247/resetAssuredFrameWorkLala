@@ -43,14 +43,14 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Complete Order");
 		RequestData.put("OrderID", GlobalData.NewOrderID);
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 
 	}/*--END OF METHOD---*/
 
@@ -63,14 +63,14 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Complete Order");
 		RequestData.put("OrderID", "-1");
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 404));
+		Assert.assertEquals(response.getStatusCode(),404);
 
 
 	}/*--END OF METHOD---*/
@@ -84,14 +84,14 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Complete Order");
 		RequestData.put("OrderID", prop.getProperty("assignedOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+		Assert.assertEquals(response.getStatusCode(),422);
 
 
 	}/*--END OF METHOD---*/
@@ -105,14 +105,14 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Complete Order");
 		RequestData.put("OrderID", prop.getProperty("completedOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+		Assert.assertEquals(response.getStatusCode(),422);
 
 
 	}/*--END OF METHOD---*/
@@ -127,14 +127,14 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Complete Order");
 		RequestData.put("OrderID", prop.getProperty("cancelledOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+		Assert.assertEquals(response.getStatusCode(),422);
 
 
 	}/*--END OF METHOD---*/

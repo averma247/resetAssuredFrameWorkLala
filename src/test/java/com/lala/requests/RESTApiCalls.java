@@ -13,20 +13,20 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class RESTApiCalls extends CreateJSONPayLoad{
+public class RESTApiCalls extends JSONPayLoadPraser{
 
 	public Response response=null;
 	public JSONObject requestParams=null;
 	public JsonPath jsonPathEvaluator = null;
 
-	public Response sendRESTAPIRequest(HashMap<String,String> RequestData){
+	public Response restAPIRequestInitiator(HashMap<String,String> RequestData){
 
 		RestAssured.baseURI=prop.getProperty("baseURL");
 
 
 		if(RequestData.get("RequestType").contains("New Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readyJSONPayloadFromFile("NewOrder");
+			requestParams = readJSONPayloadFromFile("NewOrder");
 			request.body(requestParams.toJSONString());
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
@@ -45,7 +45,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 		else if(RequestData.get("RequestType").contains("Future Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readyJSONPayloadFromFile("FutureOrder");
+			requestParams = readJSONPayloadFromFile("FutureOrder");
 			request.body(requestParams.toJSONString());
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
@@ -64,7 +64,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 		else if(RequestData.get("RequestType").contains("Cancel Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readyJSONPayloadFromFile("Cancel");
+			requestParams = readJSONPayloadFromFile("Cancel");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("cancelOrderURL"));
 			return response;
@@ -72,7 +72,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 		else if(RequestData.get("RequestType").contains("Take Away")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readyJSONPayloadFromFile("Takeaway");
+			requestParams = readJSONPayloadFromFile("Takeaway");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("takeawayOrderURL"));
 			return response;
@@ -80,7 +80,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 		else if(RequestData.get("RequestType").contains("Complete Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readyJSONPayloadFromFile("Complete");
+			requestParams = readJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("completeOrderURL"));
 			return response;
@@ -88,7 +88,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 		else if(RequestData.get("RequestType").contains("Fetch Order")){
 			RequestSpecification request = RestAssured.given();
-			/*requestParams = CreateJSONPayLoad.readyJSONPayloadFromFile("Complete");
+			/*requestParams = JSONPayLoadPraser.readyJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());*/
 			response = request.get(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID"));
 			return response;
@@ -96,7 +96,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 		else if(RequestData.get("RequestType").contains("InValid Payload")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readyJSONPayloadFromFile("InValidPayload");
+			requestParams = readJSONPayloadFromFile("InValidPayload");
 			request.body(requestParams.toJSONString());
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
@@ -127,7 +127,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 
 
-	public static boolean verifyResponseCode(Response response, int expectedStatusCode){
+	public boolean verifyResponseCode(Response response, int expectedStatusCode){
 
 		System.out.println("Verifying status code came in response.");	
 		if(response.getStatusCode()==expectedStatusCode){
@@ -141,7 +141,7 @@ public class RESTApiCalls extends CreateJSONPayLoad{
 
 	}
 
-	public static boolean verifyOrderIDInResponse(Response response, String ExpectedOrderID){
+	public boolean verifyOrderIDInResponse(Response response, String ExpectedOrderID){
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		System.out.println("Order ID from Response " + jsonPathEvaluator.get("id"));
 		System.out.println("Expected Order ID: "+ ExpectedOrderID);

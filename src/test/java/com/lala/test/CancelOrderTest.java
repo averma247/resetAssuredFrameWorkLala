@@ -6,7 +6,7 @@ import static com.lala.test.GlobalData.NewOrderID;
 import java.util.HashMap;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.lala.requests.RESTApiCalls;
@@ -26,7 +26,7 @@ public class CancelOrderTest extends RESTApiCalls {
 
 	private PlaceOrderTest placeorder=new PlaceOrderTest();
 
-	@BeforeClass
+	@BeforeTest
 	public void suitelalaTestNGTest(){
 
 		System.out.println("Reading Config file before executing test cases.");
@@ -44,14 +44,14 @@ public class CancelOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
 		RequestData.put("OrderID",NewOrderID);
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 		System.out.println("Test Case is Passed");
 
 
@@ -65,14 +65,14 @@ public class CancelOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
 		RequestData.put("OrderID", prop.getProperty("existingOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 		System.out.println("Test Case is Passed");
 
 
@@ -87,14 +87,14 @@ public class CancelOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
 		RequestData.put("OrderID", "-1");
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 404));
+		Assert.assertEquals(response.getStatusCode(),404);
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
@@ -108,14 +108,14 @@ public class CancelOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
 		RequestData.put("OrderID", prop.getProperty("ongoingOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
@@ -129,14 +129,14 @@ public class CancelOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
 		RequestData.put("OrderID", prop.getProperty("cancelledOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 200));
+		Assert.assertEquals(response.getStatusCode(),200);
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
@@ -150,14 +150,14 @@ public class CancelOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
 		RequestData.put("OrderID", prop.getProperty("completedOrderID"));
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 422));
+		Assert.assertEquals(response.getStatusCode(),422);
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/

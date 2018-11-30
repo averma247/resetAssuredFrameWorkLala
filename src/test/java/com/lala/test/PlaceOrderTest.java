@@ -43,14 +43,14 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "New Order");
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched. Test Case passed.");
+		Assert.assertEquals(response.getStatusCode(),201);
 
 
 
@@ -67,14 +67,14 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Future Order");
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
 		System.out.println("Verifying status code.");
-		Assert.assertTrue(RESTApiCalls.verifyResponseCode(response, 201), "Status code matched.");
+		Assert.assertEquals(response.getStatusCode(),201);
 
 
 	}/*--- END OF METHOD --*/
@@ -87,7 +87,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "InValid Payload");
-		Response response=sendRESTAPIRequest(RequestData);
+		Response response=restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			Assert.assertTrue(true,"Test is Passed, Providing valid error message.");
