@@ -2,42 +2,42 @@
 <testng-results skipped="0" failed="2" total="23" passed="21">
   <reporter-output>
   </reporter-output>
-  <suite name="lala Rest Api Testing" duration-ms="5207" started-at="2018-11-29T13:31:17Z" finished-at="2018-11-29T13:31:22Z">
+  <suite name="lala Rest Api Testing" duration-ms="4583" started-at="2018-11-29T13:39:58Z" finished-at="2018-11-29T13:40:03Z">
     <groups>
     </groups>
-    <test name="lalaTestNGTest" duration-ms="5207" started-at="2018-11-29T13:31:17Z" finished-at="2018-11-29T13:31:22Z">
+    <test name="lalaTestNGTest" duration-ms="4583" started-at="2018-11-29T13:39:58Z" finished-at="2018-11-29T13:40:03Z">
       <class name="com.lala.test.CancelOrderTest">
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyCancelExistingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelExistingOrder" duration-ms="17" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyCancelExistingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelExistingOrder" duration-ms="16" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelExistingOrder -->
-        <test-method status="PASS" signature="verifyCancelNewOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelNewOrder" duration-ms="388" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyCancelNewOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelNewOrder" duration-ms="404" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelNewOrder -->
-        <test-method status="PASS" signature="verifyCancelNonExistingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelNonExistingOrder" duration-ms="20" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyCancelNonExistingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelNonExistingOrder" duration-ms="12" started-at="2018-11-29T19:10:03Z" finished-at="2018-11-29T19:10:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelNonExistingOrder -->
-        <test-method status="PASS" signature="verifyCancelOrderForAlreadyCancelledOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelOrderForAlreadyCancelledOrder" duration-ms="21" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyCancelOrderForAlreadyCancelledOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelOrderForAlreadyCancelledOrder" duration-ms="17" started-at="2018-11-29T19:10:03Z" finished-at="2018-11-29T19:10:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelOrderForAlreadyCancelledOrder -->
-        <test-method status="PASS" signature="verifyCancelOrderForCompletedOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelOrderForCompletedOrder" duration-ms="14" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyCancelOrderForCompletedOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelOrderForCompletedOrder" duration-ms="14" started-at="2018-11-29T19:10:03Z" finished-at="2018-11-29T19:10:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelOrderForCompletedOrder -->
-        <test-method status="PASS" signature="verifyCancelOrderForOnGoingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelOrderForOnGoingOrder" duration-ms="20" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyCancelOrderForOnGoingOrder()[pri:1, instance:com.lala.test.CancelOrderTest@4b9e13df]" name="verifyCancelOrderForOnGoingOrder" duration-ms="17" started-at="2018-11-29T19:10:03Z" finished-at="2018-11-29T19:10:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCancelOrderForOnGoingOrder -->
       </class> <!-- com.lala.test.CancelOrderTest -->
       <class name="com.lala.test.PlaceOrderTest">
-        <test-method status="FAIL" signature="verifyFutureOrder()[pri:1, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="verifyFutureOrder" duration-ms="1358" started-at="2018-11-29T19:01:17Z" finished-at="2018-11-29T19:01:19Z">
+        <test-method status="FAIL" signature="verifyFutureOrder()[pri:1, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="verifyFutureOrder" duration-ms="1341" started-at="2018-11-29T19:09:58Z" finished-at="2018-11-29T19:10:00Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Test is failed, Error while placing order, Please check by placing order manually.]]>
@@ -76,93 +76,89 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFutureOrder -->
-        <test-method status="PASS" signature="verifyNewOrder()[pri:1, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="verifyNewOrder" duration-ms="1753" started-at="2018-11-29T19:01:19Z" finished-at="2018-11-29T19:01:20Z">
+        <test-method status="PASS" signature="verifyNewOrder()[pri:1, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="verifyNewOrder" duration-ms="1389" started-at="2018-11-29T19:10:00Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewOrder -->
-        <test-method status="PASS" signature="verifyNewOrderWithInvalidPayload()[pri:1, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="verifyNewOrderWithInvalidPayload" duration-ms="36" started-at="2018-11-29T19:01:20Z" finished-at="2018-11-29T19:01:20Z">
+        <test-method status="PASS" signature="verifyNewOrderWithInvalidPayload()[pri:1, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="verifyNewOrderWithInvalidPayload" duration-ms="29" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewOrderWithInvalidPayload -->
       </class> <!-- com.lala.test.PlaceOrderTest -->
       <class name="com.lala.test.DriveToCompleteOrderTest">
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="suitelalaTestNGTest" is-config="true" duration-ms="8" started-at="2018-11-29T19:01:17Z" finished-at="2018-11-29T19:01:17Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="suitelalaTestNGTest" is-config="true" duration-ms="7" started-at="2018-11-29T19:09:58Z" finished-at="2018-11-29T19:09:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:01:17Z" finished-at="2018-11-29T19:01:17Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:09:58Z" finished-at="2018-11-29T19:09:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:01:17Z" finished-at="2018-11-29T19:01:17Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.PlaceOrderTest@55f3ddb1]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:09:58Z" finished-at="2018-11-29T19:09:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyDriveToCompleteForCancelOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForCancelOrder" duration-ms="16" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyDriveToCompleteForCancelOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForCancelOrder" duration-ms="15" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToCompleteForCancelOrder -->
-        <test-method status="PASS" signature="verifyDriveToCompleteForCompletedOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForCompletedOrder" duration-ms="23" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyDriveToCompleteForCompletedOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForCompletedOrder" duration-ms="24" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToCompleteForCompletedOrder -->
-        <test-method status="PASS" signature="verifyDriveToCompleteForNewOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForNewOrder" duration-ms="479" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyDriveToCompleteForNewOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForNewOrder" duration-ms="356" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToCompleteForNewOrder -->
-        <test-method status="PASS" signature="verifyDriveToCompleteForNonExistingOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForNonExistingOrder" duration-ms="15" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyDriveToCompleteForNonExistingOrder()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForNonExistingOrder" duration-ms="13" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToCompleteForNonExistingOrder -->
-        <test-method status="PASS" signature="verifyDriveToCompleteForOnderOnAssignedState()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForOnderOnAssignedState" duration-ms="14" started-at="2018-11-29T19:01:22Z" finished-at="2018-11-29T19:01:22Z">
+        <test-method status="PASS" signature="verifyDriveToCompleteForOnderOnAssignedState()[pri:5, instance:com.lala.test.DriveToCompleteOrderTest@18be83e4]" name="verifyDriveToCompleteForOnderOnAssignedState" duration-ms="13" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToCompleteForOnderOnAssignedState -->
       </class> <!-- com.lala.test.DriveToCompleteOrderTest -->
       <class name="com.lala.test.FetchOrderTest">
-        <test-method status="PASS" signature="verifyFetchOrderForNewOrder()[pri:1, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="verifyFetchOrderForNewOrder" duration-ms="428" started-at="2018-11-29T19:01:20Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyFetchOrderForNewOrder()[pri:1, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="verifyFetchOrderForNewOrder" duration-ms="302" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFetchOrderForNewOrder -->
-        <test-method status="PASS" signature="verifyFetchOrderWhenOrderDoesNotExist()[pri:1, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="verifyFetchOrderWhenOrderDoesNotExist" duration-ms="13" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyFetchOrderWhenOrderDoesNotExist()[pri:1, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="verifyFetchOrderWhenOrderDoesNotExist" duration-ms="17" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFetchOrderWhenOrderDoesNotExist -->
-        <test-method status="PASS" signature="verifyFetchOrderWhenOrderExist()[pri:1, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="verifyFetchOrderWhenOrderExist" duration-ms="20" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyFetchOrderWhenOrderExist()[pri:1, instance:com.lala.test.FetchOrderTest@8bd1b6a]" name="verifyFetchOrderWhenOrderExist" duration-ms="20" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFetchOrderWhenOrderExist -->
       </class> <!-- com.lala.test.FetchOrderTest -->
       <class name="com.lala.test.DriveToTakeOrderTest">
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyDriveToTakeAlreadyCancelledOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeAlreadyCancelledOrder" duration-ms="20" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyDriveToTakeAlreadyCancelledOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeAlreadyCancelledOrder" duration-ms="18" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeAlreadyCancelledOrder -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyDriveToTakeAlreadyCompletedOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeAlreadyCompletedOrder" duration-ms="17" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyDriveToTakeAlreadyCompletedOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeAlreadyCompletedOrder" duration-ms="15" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeAlreadyCompletedOrder -->
-        <test-method status="PASS" signature="verifyDriveToTakeAlreadyOnGoingOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeAlreadyOnGoingOrder" duration-ms="16" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:10:01Z" finished-at="2018-11-29T19:10:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suitelalaTestNGTest -->
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suitelalaTestNGTest -->
+        <test-method status="PASS" signature="verifyDriveToTakeAlreadyOnGoingOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeAlreadyOnGoingOrder" duration-ms="15" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeAlreadyOnGoingOrder -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="FAIL" signature="verifyDriveToTakeExistingOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeExistingOrder" duration-ms="16" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="FAIL" signature="verifyDriveToTakeExistingOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeExistingOrder" duration-ms="13" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -204,19 +200,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeExistingOrder -->
-        <test-method status="PASS" signature="verifyDriveToTakeOnOrderDoesNotExist()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeOnOrderDoesNotExist" duration-ms="14" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suitelalaTestNGTest -->
+        <test-method status="PASS" signature="verifyDriveToTakeOnOrderDoesNotExist()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeOnOrderDoesNotExist" duration-ms="15" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeOnOrderDoesNotExist -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="1" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="suitelalaTestNGTest" is-config="true" duration-ms="0" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyDriveToTakeOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeOrder" duration-ms="444" started-at="2018-11-29T19:01:21Z" finished-at="2018-11-29T19:01:21Z">
+        <test-method status="PASS" signature="verifyDriveToTakeOrder()[pri:1, instance:com.lala.test.DriveToTakeOrderTest@cb5822]" name="verifyDriveToTakeOrder" duration-ms="459" started-at="2018-11-29T19:10:02Z" finished-at="2018-11-29T19:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDriveToTakeOrder -->
