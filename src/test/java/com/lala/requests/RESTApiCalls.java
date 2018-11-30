@@ -158,5 +158,24 @@ public class RESTApiCalls extends JSONPayLoadPraser{
 			return false;
 		}
 	}
+	
+	public boolean verifyMessageInResponse(Response response, String expectedmsg){
+		JsonPath jsonPathEvaluator = response.jsonPath();
+		System.out.println("Message from Response " + jsonPathEvaluator.get("message"));
+		System.out.println("Expected Message: "+ expectedmsg);
+		System.out.println("Response Data " + jsonPathEvaluator.prettyPrint());
+
+		if(expectedmsg.equalsIgnoreCase((String) jsonPathEvaluator.get("message"))){
+
+			System.out.println("Order ID in the response is same.");
+			return true;
+
+		}
+		else{
+			System.out.println("Expected Message in the response is different: "+jsonPathEvaluator.get("message")+"from"+" Expected Message: "+expectedmsg);
+			return false;
+		}
+	}
+	
 
 }

@@ -158,6 +158,7 @@ public class CancelOrderTest extends RESTApiCalls {
 
 		System.out.println("Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
+		Assert.assertEquals(verifyMessageInResponse(response,"Order status is COMPLETED already"), true);
 		System.out.println("---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/

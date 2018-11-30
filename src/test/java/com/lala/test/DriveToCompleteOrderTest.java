@@ -92,6 +92,8 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 
 		System.out.println("Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
+		Assert.assertEquals(verifyMessageInResponse(response,"Order status is not ONGOING"), true);
+		
 
 
 	}/*--END OF METHOD---*/
@@ -113,6 +115,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 
 		System.out.println("Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
+		Assert.assertEquals(verifyMessageInResponse(response,"Order status is not ONGOING"), true);
 
 
 	}/*--END OF METHOD---*/
@@ -135,6 +138,7 @@ public class DriveToCompleteOrderTest extends RESTApiCalls{
 
 		System.out.println("Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
+		Assert.assertEquals(verifyMessageInResponse(response,"Order status is not ONGOING"), true);
 
 
 	}/*--END OF METHOD---*/
