@@ -17,7 +17,7 @@ public class GlobalData {
 
 		try {
 
-			input = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config1.properties");
+			input = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config.properties");
 
 			// load a properties file
 			prop.load(input);
