@@ -13,11 +13,11 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class RESTApiCalls extends JSONPayLoadPraser{
+public class RESTApiCalls extends JSONPayLoadParser{
 
 	public Response response=null;
 	public JSONObject requestParams=null;
-	public JsonPath jsonPathEvaluator = null;
+	public JsonPath jsonPathEvaluator=null;
 
 	public Response restAPIRequestInitiator(HashMap<String,String> RequestData){
 
@@ -88,7 +88,7 @@ public class RESTApiCalls extends JSONPayLoadPraser{
 
 		else if(RequestData.get("RequestType").contains("Fetch Order")){
 			RequestSpecification request = RestAssured.given();
-			/*requestParams = JSONPayLoadPraser.readyJSONPayloadFromFile("Complete");
+			/*requestParams = JSONPayLoadParser.readyJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());*/
 			response = request.get(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID"));
 			return response;

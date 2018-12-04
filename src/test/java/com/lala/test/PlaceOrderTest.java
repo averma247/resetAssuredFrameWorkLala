@@ -5,7 +5,6 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.lala.requests.GlobalData;
 import com.lala.requests.RESTApiCalls;
 

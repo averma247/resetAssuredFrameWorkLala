@@ -9,6 +9,7 @@ public class GlobalData {
 
 	public static String NewOrderID=null;
 	public static Properties prop = new Properties();
+	
 	public static void readConfigFile() {
 
 
@@ -16,7 +17,7 @@ public class GlobalData {
 
 		try {
 
-			input = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config.properties");
+			input = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config1.properties");
 
 			// load a properties file
 			prop.load(input);
@@ -38,7 +39,12 @@ public class GlobalData {
 			}
 		}
 	}
-
+	
+	public static void main(String args[]){
+		
+		System.out.println(System.getProperty("user.dir"));
+		
+	}
 
 
 }
