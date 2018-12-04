@@ -14,52 +14,31 @@
     <classes>
       <class name="com.lala.test.DriveToCompleteOrderTest">
         <methods>
-          <include name="verifyDriveToCompleteForOnderOnAssignedState"/>
-          <include name="verifyDriveToCompleteForCancelOrder"/>
-          <include name="verifyDriveToCompleteForNewOrder"/>
-          <include name="verifyDriveToCompleteForNonExistingOrder"/>
           <include name="suitelalaTestNGTest"/>
-          <include name="verifyDriveToCompleteForCompletedOrder"/>
         </methods>
       </class> <!-- com.lala.test.DriveToCompleteOrderTest -->
       <class name="com.lala.test.FetchOrderTest">
         <methods>
-          <include name="verifyFetchOrderForNewOrder"/>
-          <include name="verifyFetchOrderWhenOrderExist"/>
           <include name="suitelalaTestNGTest"/>
-          <include name="verifyFetchOrderWhenOrderDoesNotExist"/>
         </methods>
       </class> <!-- com.lala.test.FetchOrderTest -->
       <class name="com.lala.test.DriveToTakeOrderTest">
         <methods>
-          <include name="verifyDriveToTakeOrder"/>
           <include name="suitelalaTestNGTest"/>
-          <include name="verifyDriveToTakeAlreadyCancelledOrder"/>
           <include name="verifyDriveToTakeExistingOrder"/>
-          <include name="verifyDriveToTakeOnOrderDoesNotExist"/>
-          <include name="verifyDriveToTakeAlreadyOnGoingOrder"/>
-          <include name="verifyDriveToTakeAlreadyCompletedOrder"/>
         </methods>
       </class> <!-- com.lala.test.DriveToTakeOrderTest -->
-      <class name="com.lala.test.CancelOrderTest">
-        <methods>
-          <include name="verifyCancelOrderForAlreadyCancelledOrder"/>
-          <include name="verifyCancelNewOrder"/>
-          <include name="verifyCancelOrderForCompletedOrder"/>
-          <include name="verifyCancelExistingOrder"/>
-          <include name="suitelalaTestNGTest"/>
-          <include name="verifyCancelOrderForOnGoingOrder"/>
-          <include name="verifyCancelNonExistingOrder"/>
-        </methods>
-      </class> <!-- com.lala.test.CancelOrderTest -->
       <class name="com.lala.test.PlaceOrderTest">
         <methods>
           <include name="verifyFutureOrder"/>
-          <include name="verifyNewOrderWithInvalidPayload"/>
           <include name="suitelalaTestNGTest"/>
-          <include name="verifyNewOrder"/>
         </methods>
       </class> <!-- com.lala.test.PlaceOrderTest -->
+      <class name="com.lala.test.CancelOrderTest">
+        <methods>
+          <include name="suitelalaTestNGTest"/>
+        </methods>
+      </class> <!-- com.lala.test.CancelOrderTest -->
     </classes>
   </test> <!-- lalaTestNGTest(failed) -->
 </suite> <!-- Failed suite [lala Rest Api Testing] -->

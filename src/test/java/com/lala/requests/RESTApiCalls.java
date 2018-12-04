@@ -13,11 +13,12 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class RESTApiCalls extends JSONPayLoadParser{
+public class RESTApiCalls{
 
 	public Response response=null;
 	public JSONObject requestParams=null;
 	public JsonPath jsonPathEvaluator=null;
+	public JSONPayLoadParser jsonPayLoadParser=new JSONPayLoadParser();
 
 	public Response restAPIRequestInitiator(HashMap<String,String> RequestData){
 
@@ -26,7 +27,7 @@ public class RESTApiCalls extends JSONPayLoadParser{
 
 		if(RequestData.get("RequestType").contains("New Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readJSONPayloadFromFile("NewOrder");
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("NewOrder");
 			request.body(requestParams.toJSONString());
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
@@ -45,7 +46,7 @@ public class RESTApiCalls extends JSONPayLoadParser{
 
 		else if(RequestData.get("RequestType").contains("Future Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readJSONPayloadFromFile("FutureOrder");
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("FutureOrder");
 			request.body(requestParams.toJSONString());
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
@@ -64,7 +65,7 @@ public class RESTApiCalls extends JSONPayLoadParser{
 
 		else if(RequestData.get("RequestType").contains("Cancel Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readJSONPayloadFromFile("Cancel");
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("Cancel");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("cancelOrderURL"));
 			return response;
@@ -72,7 +73,7 @@ public class RESTApiCalls extends JSONPayLoadParser{
 
 		else if(RequestData.get("RequestType").contains("Take Away")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readJSONPayloadFromFile("Takeaway");
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("Takeaway");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("takeawayOrderURL"));
 			return response;
@@ -80,7 +81,7 @@ public class RESTApiCalls extends JSONPayLoadParser{
 
 		else if(RequestData.get("RequestType").contains("Complete Order")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readJSONPayloadFromFile("Complete");
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("Complete");
 			request.body(requestParams.toJSONString());
 			response = request.put(prop.getProperty("placeOrderURL")+"/"+RequestData.get("OrderID")+prop.getProperty("completeOrderURL"));
 			return response;
@@ -96,7 +97,7 @@ public class RESTApiCalls extends JSONPayLoadParser{
 
 		else if(RequestData.get("RequestType").contains("InValid Payload")){
 			RequestSpecification request = RestAssured.given();
-			requestParams = readJSONPayloadFromFile("InValidPayload");
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("InValidPayload");
 			request.body(requestParams.toJSONString());
 			System.out.println("JSON payload: "+ requestParams.toJSONString() );
 			response = request.post(prop.getProperty("placeOrderURL"));
