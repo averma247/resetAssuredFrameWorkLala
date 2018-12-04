@@ -1,10 +1,14 @@
 package com.lala.requests;
 
+import static com.lala.requests.GlobalData.LOGGER;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.logging.Level;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -30,7 +34,7 @@ public class JSONPayLoadParser {
 
 				JSONObject payloadlist = (JSONObject) obj;
 				System.out.println(payloadlist);
-
+				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 				return payloadlist;            
 			}
 
@@ -44,6 +48,7 @@ public class JSONPayLoadParser {
 
 				JSONObject payloadlist = (JSONObject) obj;
 				System.out.println(payloadlist);
+				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 
 				return payloadlist;            
 			}  
@@ -58,6 +63,7 @@ public class JSONPayLoadParser {
 
 				JSONObject payloadlist = (JSONObject) obj;
 				System.out.println(payloadlist);
+				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 
 				return payloadlist;            
 			}  
@@ -68,7 +74,9 @@ public class JSONPayLoadParser {
 
 				JSONObject placeOrderJSON = (JSONObject) obj;
 				System.out.println("Payload data for stops");
+				LOGGER.log(Level.INFO, "Payload data for stops");
 				System.out.println(placeOrderJSON.get("stops"));
+				LOGGER.log(Level.INFO, placeOrderJSON.get("stops").toString());
 
 				JSONArray storelocation = (JSONArray) placeOrderJSON.get("stops");
 
@@ -89,7 +97,6 @@ public class JSONPayLoadParser {
 
 				System.out.println(placeOrderJSON.get("stops"));
 				System.out.println(placeOrderJSON.get("orderAt"));
-				placeOrderJSON.put("orderAt", date.toInstant());
 				System.out.println("Future order date and time: "+placeOrderJSON.get("orderAt"));
 				JSONArray storelocation = (JSONArray) placeOrderJSON.get("stops");
 

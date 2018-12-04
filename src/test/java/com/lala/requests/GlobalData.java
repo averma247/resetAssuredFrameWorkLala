@@ -1,14 +1,19 @@
 package com.lala.requests;
 
+import static com.lala.requests.GlobalData.LOGGER;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GlobalData {
 
 	public static String NewOrderID=null;
 	public static Properties prop = new Properties();
+	public final static Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 
 	
 	public static void readConfigFile() {
 
@@ -24,8 +29,8 @@ public class GlobalData {
 
 			// get the property value and print it out
 			System.out.println("Base URL "+prop.getProperty("baseURL"));
-			//System.out.println(prop.getProperty("dbuser"));
-			//System.out.println(prop.getProperty("dbpassword"));
+			LOGGER.log(Level.INFO, "Base URL "+prop.getProperty("baseURL"));
+			
 
 		} catch (IOException ex) {
 			ex.printStackTrace();
