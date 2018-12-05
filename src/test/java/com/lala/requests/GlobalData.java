@@ -28,7 +28,6 @@ public class GlobalData {
 			prop.load(input);
 
 			// get the property value and print it out
-			System.out.println("Base URL "+prop.getProperty("baseURL"));
 			LOGGER.log(Level.INFO, "Base URL "+prop.getProperty("baseURL"));
 			
 
@@ -45,11 +44,5 @@ public class GlobalData {
 		}
 	}
 	
-	public static void main(String args[]){
-		
-		System.out.println(System.getProperty("user.dir"));
-		
-	}
-
 
 }

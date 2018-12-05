@@ -33,7 +33,7 @@ public class CancelOrderTest {
 	@BeforeTest
 	public void suitelalaTestNGTest(){
 
-		System.out.println("Reading Config file before executing test cases.");
+		
 		LOGGER.log(Level.INFO, "Reading Config file before executing test cases.");
 		GlobalData.readConfigFile();
 	}  
@@ -43,7 +43,7 @@ public class CancelOrderTest {
 	public void verifyCancelNewOrder(){
 
 
-		System.out.println("Verifying Cancelling new Order, Placing a new order");
+		
 		LOGGER.log(Level.INFO, "Verifying Cancelling new Order, Placing a new order");
 
 		placeorder.verifyNewOrder();
@@ -57,10 +57,10 @@ public class CancelOrderTest {
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
+		
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
-		System.out.println("Test Case is Passed");
+		
 		LOGGER.log(Level.INFO, "---------- Test Case is Passed -----------------");
 
 
@@ -70,7 +70,7 @@ public class CancelOrderTest {
 	public void verifyCancelExistingOrder(){
 
 
-		System.out.println("Verifying Cancelling and Existing Order, Placing a new order");
+		
 		LOGGER.log(Level.INFO, "Verifying Cancelling and Existing Order, Placing a new order");
 		
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
@@ -83,10 +83,10 @@ public class CancelOrderTest {
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
+		
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
-		System.out.println("Test Case is Passed");
+		
 		LOGGER.log(Level.INFO, "Test Case is Passed.");
 
 
@@ -97,7 +97,7 @@ public class CancelOrderTest {
 	public void verifyCancelNonExistingOrder(){
 
 
-		System.out.println("Verifying Cancelling and Existing Order");
+		
 		LOGGER.log(Level.INFO, "Verifying Cancelling and Existing Order");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
@@ -109,12 +109,11 @@ public class CancelOrderTest {
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
+		
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),404);
 		LOGGER.log(Level.INFO, "---------- Test Case is Passed -------------");
-		System.out.println("---------- Test Case is Passed -------------");
-
+		
 	}/*--END OF METHOD---*/
 
 
@@ -122,7 +121,7 @@ public class CancelOrderTest {
 	public void verifyCancelOrderForOnGoingOrder(){
 
 
-		System.out.println("Verifying Cancelling and OnGoing Order");
+		
 		LOGGER.log(Level.INFO, "Verifying Cancelling and OnGoing Order");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
@@ -134,11 +133,11 @@ public class CancelOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
+		
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
 		LOGGER.log(Level.INFO, "---------- Test Case is Passed -------------");
-		System.out.println("---------- Test Case is Passed -------------");
+		
 
 	}/*--END OF METHOD---*/
 
@@ -147,7 +146,7 @@ public class CancelOrderTest {
 	public void verifyCancelOrderForAlreadyCancelledOrder(){
 
 
-		System.out.println("Verifying Cancelling and Existing Order");
+		
 		LOGGER.log(Level.INFO, "Verifying Cancelling and Existing Order");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
@@ -160,10 +159,10 @@ public class CancelOrderTest {
 			
 		}
 
-		System.out.println("Verifying status code.");
+		
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
-		System.out.println("---------- Test Case is Passed -------------");
+		
 		LOGGER.log(Level.INFO, "---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/
@@ -173,7 +172,7 @@ public class CancelOrderTest {
 	public void verifyCancelOrderForCompletedOrder(){
 
 
-		System.out.println("Verifying Cancelling of completed Order");
+		
 		LOGGER.log(Level.INFO, "Verifying Cancelling of completed Order");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Cancel Order");
@@ -185,11 +184,11 @@ public class CancelOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
+		
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
 		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is COMPLETED already"), true);
-		System.out.println("---------- Test Case is Passed -------------");
+		
 		LOGGER.log(Level.INFO, "---------- Test Case is Passed -------------");
 
 	}/*--END OF METHOD---*/

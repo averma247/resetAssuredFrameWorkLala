@@ -33,7 +33,6 @@ public class JSONPayLoadParser {
 				Object obj = jsonParser.parse(reader);
 
 				JSONObject payloadlist = (JSONObject) obj;
-				System.out.println(payloadlist);
 				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 				return payloadlist;            
 			}
@@ -47,7 +46,6 @@ public class JSONPayLoadParser {
 				Object obj = jsonParser.parse(reader);
 
 				JSONObject payloadlist = (JSONObject) obj;
-				System.out.println(payloadlist);
 				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 
 				return payloadlist;            
@@ -62,9 +60,6 @@ public class JSONPayLoadParser {
 				Object obj = jsonParser.parse(reader);
 
 				JSONObject payloadlist = (JSONObject) obj;
-				System.out.println(payloadlist);
-				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
-
 				return payloadlist;            
 			}  
 
@@ -73,17 +68,12 @@ public class JSONPayLoadParser {
 				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/placeorderpayload.json")));
 
 				JSONObject placeOrderJSON = (JSONObject) obj;
-				System.out.println("Payload data for stops");
-				LOGGER.log(Level.INFO, "Payload data for stops");
-				System.out.println(placeOrderJSON.get("stops"));
-				LOGGER.log(Level.INFO, placeOrderJSON.get("stops").toString());
-
 				JSONArray storelocation = (JSONArray) placeOrderJSON.get("stops");
 
-				Iterator<?> iterator = storelocation.iterator();
+				/*Iterator<?> iterator = storelocation.iterator();
 				while (iterator.hasNext()) {
 					System.out.println(iterator.next());
-				}
+				}*/
 				return placeOrderJSON;
 
 			}
@@ -94,16 +84,12 @@ public class JSONPayLoadParser {
 
 				JSONObject placeOrderJSON = (JSONObject) obj;
 				Date date = new Date();  
-
-				System.out.println(placeOrderJSON.get("stops"));
-				System.out.println(placeOrderJSON.get("orderAt"));
-				System.out.println("Future order date and time: "+placeOrderJSON.get("orderAt"));
 				JSONArray storelocation = (JSONArray) placeOrderJSON.get("stops");
 
-				Iterator<?> iterator = storelocation.iterator();
+				/*Iterator<?> iterator = storelocation.iterator();
 				while (iterator.hasNext()) {
-					System.out.println(iterator.next());
-				}
+					//System.out.println(iterator.next());
+				}*/
 				return placeOrderJSON;
 
 			}
@@ -120,8 +106,6 @@ public class JSONPayLoadParser {
 
 
 			else{
-
-				System.out.println("Please provide the correct request type.");
 				return null;
 			}
 

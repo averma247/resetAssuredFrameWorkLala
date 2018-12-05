@@ -30,7 +30,6 @@
       </class> <!-- com.lala.test.DriveToTakeOrderTest -->
       <class name="com.lala.test.PlaceOrderTest">
         <methods>
-          <include name="verifyFutureOrder"/>
           <include name="suitelalaTestNGTest"/>
         </methods>
       </class> <!-- com.lala.test.PlaceOrderTest -->

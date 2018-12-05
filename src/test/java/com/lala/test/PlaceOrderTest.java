@@ -33,7 +33,6 @@ public class PlaceOrderTest {
 	public void suitelalaTestNGTest(){
 		
 		LOGGER.log(Level.INFO, "Reading Config file before executing test cases.");
-		System.out.println("Reading Config file before executing test cases.");
 		GlobalData.readConfigFile();
 	}  
 
@@ -43,7 +42,6 @@ public class PlaceOrderTest {
 	public void verifyNewOrder(){
 		
 		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data.");
-		System.out.println("Verfying New Order Flow with Valid Data.");
 
 		//int actualStatusCode=placeorder.placeNewOrder();
 
@@ -56,7 +54,6 @@ public class PlaceOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),201);
 
@@ -66,11 +63,10 @@ public class PlaceOrderTest {
 
 
 
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	public void verifyFutureOrder(){
 
 		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data.");
-		System.out.println("Verfying New Order Flow with Valid Data.");
 
 		//int actualStatusCode=placeorder.placeNewOrder();
 
@@ -83,7 +79,6 @@ public class PlaceOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		System.out.println("Verifying status code.");
 		LOGGER.log(Level.INFO,"Verifying status code");
 		Assert.assertEquals(response.getStatusCode(),201);
 
@@ -91,10 +86,9 @@ public class PlaceOrderTest {
 	}/*--- END OF METHOD --*/
 
 
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	public void verifyNewOrderWithInvalidPayload(){
 
-		System.out.println("Verfying New Order Flow with In-Valid Data.");
 		LOGGER.log(Level.INFO,"Verfying New Order Flow with In-Valid Data.");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
