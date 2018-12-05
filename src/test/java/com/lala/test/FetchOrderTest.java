@@ -25,9 +25,10 @@ import io.restassured.response.Response;
  * */
 
 
-public class FetchOrderTest extends RESTApiCalls {
+public class FetchOrderTest {
 
 	private PlaceOrderTest placeorder=new PlaceOrderTest();
+	private RESTApiCalls restapicalls= new RESTApiCalls();
 
 	@BeforeTest
 	public void suitelalaTestNGTest(){
@@ -48,7 +49,7 @@ public class FetchOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", NewOrderID);
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check manually.");
@@ -73,7 +74,7 @@ public class FetchOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", prop.getProperty("existingOrderID"));
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check manually.");
@@ -98,7 +99,7 @@ public class FetchOrderTest extends RESTApiCalls {
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", "-1");
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check manually.");

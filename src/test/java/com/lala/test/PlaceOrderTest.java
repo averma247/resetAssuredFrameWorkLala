@@ -24,9 +24,10 @@ import io.restassured.response.Response;
  * */
 
 
-public class PlaceOrderTest extends RESTApiCalls{
-
-	//private final static Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 
+public class PlaceOrderTest {
+	
+	RESTApiCalls restapicalls= new RESTApiCalls();
+	
 
 	@BeforeTest
 	public void suitelalaTestNGTest(){
@@ -48,7 +49,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "New Order");
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
@@ -75,7 +76,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Future Order");
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE,"Test is failed, Error while placing order, Please check by placing order manually.");
@@ -98,7 +99,7 @@ public class PlaceOrderTest extends RESTApiCalls{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "InValid Payload");
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.INFO,"Test is Passed, Providing valid error message.");

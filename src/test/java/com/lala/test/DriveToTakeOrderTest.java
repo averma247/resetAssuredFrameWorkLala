@@ -25,9 +25,10 @@ import io.restassured.response.Response;
 
 
 
-public class DriveToTakeOrderTest extends RESTApiCalls{
+public class DriveToTakeOrderTest{
 
 	private PlaceOrderTest placeorder=new PlaceOrderTest();
+	private RESTApiCalls restapicalls= new RESTApiCalls();
 
 	@BeforeTest
 	public void suitelalaTestNGTest(){
@@ -48,7 +49,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID", GlobalData.NewOrderID);
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
@@ -72,7 +73,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("existingOrderID"));
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
@@ -97,7 +98,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("cancelledOrderID"));
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check by placing order manually.");
@@ -107,7 +108,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("Verifying status code.");
 		LOGGER.log(Level.INFO, "Verifying status code");
 		Assert.assertEquals(response.getStatusCode(),422);
-		Assert.assertEquals(verifyMessageInResponse(response,"Order status is not ASSIGNING"), true);
+		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is not ASSIGNING"), true);
 		System.out.println("----------- Test Case is Completed -----------");
 		LOGGER.log(Level.INFO, "----------- Test Case is Completed -----------");
 
@@ -123,7 +124,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("completedOrderID"));
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
@@ -133,7 +134,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("Verifying status code.");
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
-		Assert.assertEquals(verifyMessageInResponse(response,"Order status is not ASSIGNING"), true);
+		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is not ASSIGNING"), true);
 		System.out.println("----------- Test Case is Completed -----------");
 		LOGGER.log(Level.INFO, "----------- Test Case is Completed -----------");
 
@@ -148,7 +149,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID",prop.getProperty("ongoingOrderID"));
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
@@ -158,7 +159,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		System.out.println("Verifying status code.");
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
-		Assert.assertEquals(verifyMessageInResponse(response,"Order status is not ASSIGNING"), true);
+		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is not ASSIGNING"), true);
 		System.out.println("----------- Test Case is Completed -----------");
 		LOGGER.log(Level.INFO, "----------- Test Case is Completed -----------");
 
@@ -173,7 +174,7 @@ public class DriveToTakeOrderTest extends RESTApiCalls{
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
 		RequestData.put("OrderID","-1");
-		Response response=restAPIRequestInitiator(RequestData);
+		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
