@@ -14,6 +14,16 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
+
+
+/**
+ * Below Class is CommonUtils class which take cares JSONPayload for New Order and Future Order.
+ * 
+ * */
+
+
+
+
 public class CommonUtils {
 	Response response=null;
 	JSONObject requestParams=null;

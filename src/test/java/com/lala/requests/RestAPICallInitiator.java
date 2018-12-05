@@ -12,12 +12,20 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class RestAPICallInitiator {
-	
+
 	public Response response=null;
 	public JSONObject requestParams=null;
 	public JsonPath jsonPathEvaluator=null;
 	public JSONPayLoadParser jsonPayLoadParser=new JSONPayLoadParser();
 	public CommonUtils cmutils= new CommonUtils();
+
+
+
+	/**
+	 * Below Class is Refactor class for different API requests.
+	 * 
+	 * */
+
 
 	public Response sendPOSTRequest(RequestSpecification request,String URL){
 		//request = RestAssured.given();
@@ -25,13 +33,13 @@ public class RestAPICallInitiator {
 		response = request.post(URL);
 		return response;
 	}
-	
+
 	public Response sendPUTRequest(RequestSpecification request,String URL){
 		RestAssured.baseURI=prop.getProperty("baseURL");
 		response = request.put(URL);
 		return response;
 	}
-	
+
 	public Response sendGETRequest(RequestSpecification request,String URL){
 		RestAssured.baseURI=prop.getProperty("baseURL");
 		response = request.get(URL);

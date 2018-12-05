@@ -14,6 +14,16 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import com.lala.test.utils.CommonUtils;
 
+
+
+
+/**
+ * Below Class handles the different API request based on request types.
+ * 
+ * */
+
+
+
 public class RESTApiCalls{
 
 	public Response response=null;
@@ -115,13 +125,6 @@ public class RESTApiCalls{
 	}/*--- END OF MSG*/
 
 
-	public void sendPOSTAPIRequest(){
-		
-		RestAssured.baseURI=prop.getProperty("baseURL");
-		RequestSpecification request = RestAssured.given();
-		response = request.post(prop.getProperty("placeOrderURL"));
-		
-	}
 	public boolean verifyResponseCode(Response response, int expectedStatusCode){
 
 	
