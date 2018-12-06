@@ -6,7 +6,9 @@ import static com.lala.requests.GlobalData.prop;
 import java.util.HashMap;
 import java.util.logging.Level;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -39,7 +41,7 @@ public class RESTApiCalls{
 
 
 		if(RequestData.get("RequestType").contains("New Order")){
-			
+
 			response = cmutils.getJSONPayLoadNewOrder();//gets the JSON Payload from file
 			jsonPathEvaluator = response.jsonPath();
 			if((jsonPathEvaluator.get("id"))!=null){
@@ -47,7 +49,7 @@ public class RESTApiCalls{
 				LOGGER.log(Level.INFO, "New Order ID is: "+NewOrderID);
 			}
 			else{
-				
+
 				LOGGER.log(Level.INFO, "New Order ID is null");
 				return null;
 			}
@@ -104,6 +106,41 @@ public class RESTApiCalls{
 			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
 		}
 
+		else if(RequestData.get("RequestType").contains("InValid Origin")){
+			RequestSpecification request = RestAssured.given();
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("InValidOrderOrigin");
+			request.body(requestParams.toJSONString());
+			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
+		}
+
+		else if(RequestData.get("RequestType").contains("tripcostpayloadnotin9to5")){
+			RequestSpecification request = RestAssured.given();
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("tripcostpayloadnotin9to5");
+			request.body(requestParams.toJSONString());
+			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
+		}
+
+		else if(RequestData.get("RequestType").contains("tripcostpayloadin9to5")){
+			RequestSpecification request = RestAssured.given();
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("tripcostpayloadin9to5");
+			request.body(requestParams.toJSONString());
+			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
+		}
+
+		else if(RequestData.get("RequestType").contains("backdateorderpaylod")){
+			RequestSpecification request = RestAssured.given();
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("backdateorderpaylod");
+			request.body(requestParams.toJSONString());
+			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
+		}
+		
+		
+		else if(RequestData.get("RequestType").contains("drivingdistancecountpayload")){
+			RequestSpecification request = RestAssured.given();
+			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("drivingdistancecountpayload");
+			request.body(requestParams.toJSONString());
+			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
+		}
 
 		else{
 
@@ -118,7 +155,7 @@ public class RESTApiCalls{
 
 	public boolean verifyResponseCode(Response response, int expectedStatusCode){
 
-	
+
 		LOGGER.log(Level.INFO,"Verifying status code came in response.");
 		if(response.getStatusCode()==expectedStatusCode){
 			LOGGER.log(Level.INFO,"Status code is matched.");
@@ -139,35 +176,53 @@ public class RESTApiCalls{
 
 		if(ExpectedOrderID.equalsIgnoreCase((String) jsonPathEvaluator.get("id"))){
 
-			
+
 			LOGGER.log(Level.INFO,"Order ID in the response is same.");
 			return true;
 
 		}
 		else{
-			
+
 			LOGGER.log(Level.INFO,"Order ID in the response is different: "+jsonPathEvaluator.get("id")+"from"+" Expected Order ID: "+ExpectedOrderID);
 			return false;
 		}
 	}
-	
+
 	public boolean verifyMessageInResponse(Response response, String expectedmsg){
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		//
 
 		if(expectedmsg.equalsIgnoreCase((String) jsonPathEvaluator.get("message"))){
 
-			
-			LOGGER.log(Level.INFO,"Order ID in the response is same.");
+
+			LOGGER.log(Level.INFO,jsonPathEvaluator.get("message").toString());
 			return true;
 
 		}
 		else{
-			
+
 			LOGGER.log(Level.INFO,"Expected Message in the response is different: "+jsonPathEvaluator.get("message")+"from"+" Expected Message: "+expectedmsg);
 			return false;
 		}
 	}
-	
+
+	public String getFareCost(String jsonResponse, String attribute) {
+
+		JSONObject mainObject = (JSONObject) JSONValue.parse(jsonResponse);
+		Object mainFieldValue = mainObject.get("fare");
+		String fare = mainFieldValue.toString();
+		JSONObject subFieldJsonObject = (JSONObject) JSONValue.parse(fare);
+		Object subFieldObject = subFieldJsonObject.get(attribute);
+		String responseFieldValue = subFieldObject.toString();
+		return responseFieldValue;
+	} 
+
+	public int getDistanceValueCount(String jsonResponse, String attribute) {
+		
+		JSONObject mainObject = (JSONObject) JSONValue.parse(jsonResponse);
+		JSONArray mainFieldValue = (JSONArray)mainObject.get("drivingDistancesInMeters");
+		int distanceCount= mainFieldValue.size();
+		return distanceCount;
+	} 
 
 }

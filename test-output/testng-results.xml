@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="lala Rest Api Testing" duration-ms="1618" started-at="2018-12-06T06:15:05Z" finished-at="2018-12-06T06:15:07Z">
+  <suite name="lala Rest Api Testing" duration-ms="2661" started-at="2018-12-06T07:45:26Z" finished-at="2018-12-06T07:45:29Z">
     <groups>
     </groups>
-    <test name="lalaTestNGTest" duration-ms="1618" started-at="2018-12-06T06:15:05Z" finished-at="2018-12-06T06:15:07Z">
+    <test name="lalaTestNGTest" duration-ms="2661" started-at="2018-12-06T07:45:26Z" finished-at="2018-12-06T07:45:29Z">
       <class name="com.lala.test.PlaceOrderTest">
-        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.PlaceOrderTest@62ee68d8]" name="suitelalaTestNGTest" is-config="true" duration-ms="20" started-at="2018-12-06T11:45:05Z" finished-at="2018-12-06T11:45:05Z">
+        <test-method status="PASS" signature="suitelalaTestNGTest()[pri:0, instance:com.lala.test.PlaceOrderTest@735b5592]" name="suitelalaTestNGTest" is-config="true" duration-ms="22" started-at="2018-12-06T13:15:26Z" finished-at="2018-12-06T13:15:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitelalaTestNGTest -->
-        <test-method status="PASS" signature="verifyNewOrderWithInvalidPayload()[pri:1, instance:com.lala.test.PlaceOrderTest@62ee68d8]" name="verifyNewOrderWithInvalidPayload" duration-ms="1574" started-at="2018-12-06T11:45:05Z" finished-at="2018-12-06T11:45:07Z">
+        <test-method status="PASS" signature="verifyingDistanceCount()[pri:1, instance:com.lala.test.PlaceOrderTest@735b5592]" name="verifyingDistanceCount" duration-ms="2625" started-at="2018-12-06T13:15:26Z" finished-at="2018-12-06T13:15:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNewOrderWithInvalidPayload -->
+        </test-method> <!-- verifyingDistanceCount -->
       </class> <!-- com.lala.test.PlaceOrderTest -->
     </test> <!-- lalaTestNGTest -->
   </suite> <!-- lala Rest Api Testing -->

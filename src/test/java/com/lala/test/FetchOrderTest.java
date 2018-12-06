@@ -24,7 +24,7 @@ import io.restassured.response.Response;
  * 
  * */
 
-
+//Fetch Order details Newly created Order
 public class FetchOrderTest {
 
 	private PlaceOrderTest placeorder=new PlaceOrderTest();
@@ -33,17 +33,18 @@ public class FetchOrderTest {
 	@BeforeTest
 	public void suitelalaTestNGTest(){
 
-		
+
 		LOGGER.log(Level.INFO, "Reading Config file before executing test cases.");
 		GlobalData.readConfigFile();
 	}  
 
+	//Verifying Fetch order for New Order
 
 	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderForNewOrder(){
 
-		
-		LOGGER.log(Level.INFO, "Verifying Fetch order for New Order");
+
+		LOGGER.log(Level.INFO, "Fetch Order details Newly created Order");
 		placeorder.verifyNewOrder();
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
@@ -55,8 +56,8 @@ public class FetchOrderTest {
 			LOGGER.log(Level.INFO, "Test is failed, Error while placing order, Please check manually.");
 			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
-		
-		
+
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
 		LOGGER.log(Level.INFO, "Test Case is Passed");
@@ -64,12 +65,13 @@ public class FetchOrderTest {
 
 	}/*--END OF METHOD---*/
 
+	//Verifying Fetch order for already previously placed order
 
 	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderWhenOrderExist(){
 
-		
-		LOGGER.log(Level.INFO, "Verifying Fetch order for already existing order");
+
+		LOGGER.log(Level.INFO, "Verifying Fetch order for already previously placed order");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", prop.getProperty("existingOrderID"));
@@ -80,21 +82,22 @@ public class FetchOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
 		LOGGER.log(Level.INFO, "-------- Test Case is Passed ----------");
-		
+
 
 
 	}/*--END OF METHOD---*/
 
+	//Fetch order details when order doesn't exist
 
 	@Test(priority=1, enabled=true)
 	public void verifyFetchOrderWhenOrderDoesNotExist(){
 
-		
-		LOGGER.log(Level.INFO, "Verifying Fetch order functionality for non existing order");
+
+		LOGGER.log(Level.INFO, "Fetch order details when order doesn't exist");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Fetch Order");
 		RequestData.put("OrderID", "-1");
@@ -105,7 +108,7 @@ public class FetchOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),404);
 		LOGGER.log(Level.INFO, "------Test Case completed------");

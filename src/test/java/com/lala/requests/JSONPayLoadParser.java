@@ -104,7 +104,54 @@ public class JSONPayLoadParser {
 
 			}
 
+			else if(requestType.contains("InValidOrderOrigin")){
 
+				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/invalidorderdestination.json")));
+
+				JSONObject placeOrderJSON = (JSONObject) obj;
+				return placeOrderJSON;
+
+			}
+			
+			//tripcostpayloadnotin9to5.json
+			else if(requestType.contains("tripcostpayloadnotin9to5")){
+
+				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/tripcostpayloadnotin9to5.json")));
+
+				JSONObject placeOrderJSON = (JSONObject) obj;
+				return placeOrderJSON;
+
+			}
+			
+			else if(requestType.contains("tripcostpayloadin9to5")){
+
+				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/tripcostpayloadin9to5.json")));
+
+				JSONObject placeOrderJSON = (JSONObject) obj;
+				return placeOrderJSON;
+
+			}
+			
+			
+			else if(requestType.contains("backdateorderpaylod")){
+
+				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/backdateorderpaylod.json")));
+
+				JSONObject placeOrderJSON = (JSONObject) obj;
+				return placeOrderJSON;
+
+			}
+			
+			else if(requestType.contains("drivingdistancecountpayload")){
+
+				Object obj = jsonParser.parse(new FileReader((System.getProperty("user.dir")+"/src/test/resources/drivingdistancecountpayload.json")));
+
+				JSONObject placeOrderJSON = (JSONObject) obj;
+				return placeOrderJSON;
+
+			}
+			
+			
 			else{
 				return null;
 			}
