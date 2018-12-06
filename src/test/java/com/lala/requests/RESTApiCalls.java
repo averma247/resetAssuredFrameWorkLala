@@ -102,16 +102,7 @@ public class RESTApiCalls{
 			requestParams = jsonPayLoadParser.readJSONPayloadFromFile("InValidPayload");
 			request.body(requestParams.toJSONString());
 			response= restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
-			jsonPathEvaluator = response.jsonPath();
-			if((jsonPathEvaluator.get("id"))!=null){
-				NewOrderID=(jsonPathEvaluator.get("id")).toString();
-			}
-			else{
-				LOGGER.log(Level.INFO,"New Order ID is null");
-				return null;
-			}
 		}
-
 
 
 		else{
@@ -162,9 +153,7 @@ public class RESTApiCalls{
 	
 	public boolean verifyMessageInResponse(Response response, String expectedmsg){
 		JsonPath jsonPathEvaluator = response.jsonPath();
-		LOGGER.log(Level.INFO,"Message from Response " + jsonPathEvaluator.get("message"));
-		LOGGER.log(Level.INFO,"Expected Message: "+ expectedmsg);
-		LOGGER.log(Level.INFO,"Response Data " + jsonPathEvaluator.prettyPrint());
+		//
 
 		if(expectedmsg.equalsIgnoreCase((String) jsonPathEvaluator.get("message"))){
 

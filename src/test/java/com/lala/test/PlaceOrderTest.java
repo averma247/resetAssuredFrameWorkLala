@@ -36,9 +36,9 @@ public class PlaceOrderTest {
 		GlobalData.readConfigFile();
 	}  
 
+//Verfying New Order Flow with Valid Data
 
-
-	@Test(priority=1, enabled=true)
+	@Test(priority=1, enabled=false)
 	public void verifyNewOrder(){
 		
 		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data.");
@@ -61,12 +61,12 @@ public class PlaceOrderTest {
 
 	}/*-- END OF METHOD --*/
 
-
+//Verfying New Order Flow with Valid Data and time stamp
 
 	@Test(priority=1, enabled=false)
 	public void verifyFutureOrder(){
 
-		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data.");
+		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data and time stamp.");
 
 		//int actualStatusCode=placeorder.placeNewOrder();
 
@@ -85,11 +85,11 @@ public class PlaceOrderTest {
 
 	}/*--- END OF METHOD --*/
 
-
-	@Test(priority=1, enabled=false)
+//Verfying New Order Flow with In-Valid request
+	@Test(priority=1, enabled=true)
 	public void verifyNewOrderWithInvalidPayload(){
 
-		LOGGER.log(Level.INFO,"Verfying New Order Flow with In-Valid Data.");
+		LOGGER.log(Level.INFO,"Verfying New Order Flow with In-Valid Request.");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "InValid Payload");
@@ -100,7 +100,11 @@ public class PlaceOrderTest {
 			Assert.assertTrue(true,"Test is Passed, Providing valid error message.");
 			
 		}
-
+		
+		LOGGER.log(Level.INFO,"Verifying status code");
+		Assert.assertEquals(response.getStatusCode(),400);
+		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"error in field(s): stops"), true);
+		
 
 	}/*-- END OF METHOD --*/
 
