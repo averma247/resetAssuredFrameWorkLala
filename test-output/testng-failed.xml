@@ -4,6 +4,40 @@
   <test name="lalaTestNGTest">
     <classes>
       <class name="com.lala.test.PlaceOrderTest"/>
+      <class name="com.lala.test.FetchOrderTest"/>
+      <class name="com.lala.test.DriveToTakeOrderTest"/>
+      <class name="com.lala.test.DriveToCompleteOrderTest"/>
+      <class name="com.lala.test.CancelOrderTest"/>
     </classes>
   </test> <!-- lalaTestNGTest -->
+  <test name="lalaTestNGTest(failed)">
+    <classes>
+      <class name="com.lala.test.DriveToCompleteOrderTest">
+        <methods>
+          <include name="suitelalaTestNGTest"/>
+        </methods>
+      </class> <!-- com.lala.test.DriveToCompleteOrderTest -->
+      <class name="com.lala.test.FetchOrderTest">
+        <methods>
+          <include name="suitelalaTestNGTest"/>
+        </methods>
+      </class> <!-- com.lala.test.FetchOrderTest -->
+      <class name="com.lala.test.DriveToTakeOrderTest">
+        <methods>
+          <include name="suitelalaTestNGTest"/>
+          <include name="verifyDriveToTakeExistingOrder"/>
+        </methods>
+      </class> <!-- com.lala.test.DriveToTakeOrderTest -->
+      <class name="com.lala.test.PlaceOrderTest">
+        <methods>
+          <include name="suitelalaTestNGTest"/>
+        </methods>
+      </class> <!-- com.lala.test.PlaceOrderTest -->
+      <class name="com.lala.test.CancelOrderTest">
+        <methods>
+          <include name="suitelalaTestNGTest"/>
+        </methods>
+      </class> <!-- com.lala.test.CancelOrderTest -->
+    </classes>
+  </test> <!-- lalaTestNGTest(failed) -->
 </suite> <!-- Failed suite [lala Rest Api Testing] -->

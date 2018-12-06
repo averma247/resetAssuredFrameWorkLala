@@ -37,7 +37,7 @@ public class PlaceOrderTest {
 
 	//Verifying New Order Flow with Valid Data
 
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyNewOrder(){
 
 		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data.");
@@ -62,7 +62,7 @@ public class PlaceOrderTest {
 
 	//Verifying New Order Flow with Valid Data and time stamp
 
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyFutureOrder(){
 
 		LOGGER.log(Level.INFO, "Verfying New Order Flow with Valid Data and time stamp.");
@@ -85,7 +85,7 @@ public class PlaceOrderTest {
 	}/*--- END OF METHOD --*/
 
 	//Verifying New Order Flow with In-Valid request
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyNewOrderWithInvalidPayload(){
 
 		LOGGER.log(Level.INFO,"Verfying New Order Flow with In-Valid Request.");
@@ -108,7 +108,7 @@ public class PlaceOrderTest {
 	}/*-- END OF METHOD --*/
 
 	//Verifying New Order Flow with In-Valid Origin.
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyNewOrderWithInvalidOrigin(){
 
 		LOGGER.log(Level.INFO,"Verifying New Order Flow with In-Valid Origin.");
@@ -131,7 +131,7 @@ public class PlaceOrderTest {
 	}/*-- END OF METHOD --*/
 
 	//Verifying trip cost when is scheduled not between 9PM to 5AM
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyTripCostNotIn9to5(){
 
 		LOGGER.log(Level.INFO,"Verifying trip cost when is scheduled not between 9PM to 5AM");
@@ -156,7 +156,7 @@ public class PlaceOrderTest {
 
 
 	//Verifying trip cost when is scheduled between 9PM to 5AM
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyTripCostIn9to5(){
 
 		LOGGER.log(Level.INFO,"Verfying trip cost when is schedulled between 9PM to 5AM");
@@ -180,7 +180,7 @@ public class PlaceOrderTest {
 
 
 	//Verifying Order placed using back date or time
-	@Test(priority=1, enabled=false)
+	@Test(priority=1, enabled=true)
 	public void verifyPastDateOrderRequest(){
 
 		LOGGER.log(Level.INFO,"Verifying Order placed using back date or time");

@@ -35,7 +35,7 @@ public class CommonUtils {
 		RequestSpecification request = RestAssured.given();
 		requestParams = jsonPayLoadParser.readJSONPayloadFromFile("NewOrder");
 		request.body(requestParams.toJSONString());
-		LOGGER.log(Level.INFO, "JSON payload: "+ requestParams.toJSONString());
+		//LOGGER.log(Level.INFO, "JSON payload: "+ requestParams.toJSONString());
 		response=restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
 		return response;
 
@@ -46,7 +46,7 @@ public class CommonUtils {
 		RequestSpecification request = RestAssured.given();
 		requestParams = jsonPayLoadParser.readJSONPayloadFromFile("FutureOrder");
 		request.body(requestParams.toJSONString());
-		LOGGER.log(Level.INFO, "JSON payload: "+ requestParams.toJSONString());
+		//LOGGER.log(Level.INFO, "JSON payload: "+ requestParams.toJSONString());
 		response=restAPICallInitiator.sendPOSTRequest(request,prop.getProperty("placeOrderURL"));
 		return response;
 

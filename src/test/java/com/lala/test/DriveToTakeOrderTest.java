@@ -38,7 +38,7 @@ public class DriveToTakeOrderTest{
 		GlobalData.readConfigFile();
 	}  
 
-
+	//Verifying Take away new order
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeOrder(){
 
@@ -63,7 +63,7 @@ public class DriveToTakeOrderTest{
 
 	}/*--END OF METHOD---*/
 
-
+	//Verifying Take away Existing order
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeExistingOrder(){
 
@@ -72,7 +72,7 @@ public class DriveToTakeOrderTest{
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
-		RequestData.put("OrderID",prop.getProperty("existingOrderID"));
+		RequestData.put("OrderID",prop.getProperty("existingOrderIDForDriveAway"));
 		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
@@ -87,7 +87,7 @@ public class DriveToTakeOrderTest{
 
 	}/*--END OF METHOD---*/
 
-
+	//Verifying Take away already cancelled OrderID
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyCancelledOrder(){
 
@@ -113,12 +113,12 @@ public class DriveToTakeOrderTest{
 
 	}/*--END OF METHOD---*/
 
-
+	//Verifying Take away operation on Completed OrderID
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyCompletedOrder(){
 
 		
-		LOGGER.log(Level.INFO, "Verifying Take away operationon on Completed OrderID ");
+		LOGGER.log(Level.INFO, "Verifying Take away operation on Completed OrderID ");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
@@ -139,11 +139,12 @@ public class DriveToTakeOrderTest{
 
 	}/*--END OF METHOD---*/
 
+	//Verify drive to take away operation on already on going order
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeAlreadyOnGoingOrder(){
 
 		
-		LOGGER.log(Level.INFO, "----------- Test Case is Completed -----------");
+		LOGGER.log(Level.INFO, "Verify drive to take away operation on already on going order");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Take Away");
@@ -164,6 +165,7 @@ public class DriveToTakeOrderTest{
 
 	}/*--END OF METHOD---*/
 
+	//Verifying Take away on Order doesnot exist 
 	@Test(priority=1, enabled=true)
 	public void verifyDriveToTakeOnOrderDoesNotExist(){
 

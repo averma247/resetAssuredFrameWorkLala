@@ -33,7 +33,7 @@ public class JSONPayLoadParser {
 				Object obj = jsonParser.parse(reader);
 
 				JSONObject payloadlist = (JSONObject) obj;
-				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
+				//LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 				return payloadlist;            
 			}
 
@@ -46,7 +46,7 @@ public class JSONPayLoadParser {
 				Object obj = jsonParser.parse(reader);
 
 				JSONObject payloadlist = (JSONObject) obj;
-				LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
+				//LOGGER.log(Level.INFO, "payloadlist: "+payloadlist);
 
 				return payloadlist;            
 			}  

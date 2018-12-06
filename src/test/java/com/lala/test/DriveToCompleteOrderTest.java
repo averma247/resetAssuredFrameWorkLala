@@ -33,16 +33,16 @@ public class DriveToCompleteOrderTest {
 	@BeforeTest
 	public void suitelalaTestNGTest(){
 
-	
+
 		LOGGER.log(Level.INFO, "Reading Config file before executing test cases.");
 		GlobalData.readConfigFile();
 	}  
 
-
+	//Placing New Order and Changing order status to Ongoing
 	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForNewOrder(){
 
-	
+
 		LOGGER.log(Level.INFO, "Placing New Order and Changing order status to Ongoing");
 		drivetotakeorder.verifyDriveToTakeOrder();
 
@@ -57,17 +57,17 @@ public class DriveToCompleteOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),200);
 
 	}/*--END OF METHOD---*/
 
-
+	//Verifying flow for order doesn't exist
 	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForNonExistingOrder(){
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying flow for order doesnot exist.");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
@@ -80,18 +80,18 @@ public class DriveToCompleteOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),404);
 
 
 	}/*--END OF METHOD---*/
 
-
+	//Verifying flow for order on Assigned state.
 	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForOnderOnAssignedState(){
 
-				
+
 		LOGGER.log(Level.INFO, "Verifying flow for order on Assigned state.");
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
 		RequestData.put("RequestType", "Complete Order");
@@ -103,21 +103,21 @@ public class DriveToCompleteOrderTest {
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
 		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is not ONGOING"), true);
 		LOGGER.log(Level.INFO, "----- Test case Passed -------------");
-		
+
 
 
 	}/*--END OF METHOD---*/
 
-
+	//Verifying flow for order on Assigned state
 	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForCompletedOrder(){
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying flow for order on Assigned state.");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
@@ -126,12 +126,12 @@ public class DriveToCompleteOrderTest {
 		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
-			
+
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
 		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is not ONGOING"), true);
@@ -140,11 +140,11 @@ public class DriveToCompleteOrderTest {
 	}/*--END OF METHOD---*/
 
 
-
+	//Verifying flow for order on Cancelled state
 	@Test(priority=5, enabled=true)
 	public void verifyDriveToCompleteForCancelOrder(){
 
-			
+
 		LOGGER.log(Level.INFO, "Verifying flow for order on Cancelled state.");
 
 		HashMap<String, String> RequestData= new HashMap<String, String>() ;
@@ -153,12 +153,12 @@ public class DriveToCompleteOrderTest {
 		Response response=restapicalls.restAPIRequestInitiator(RequestData);
 
 		if(response==null){
-			
+
 			LOGGER.log(Level.SEVERE, "Test is failed, Error while placing order, Please check by placing order manually.");
 			Assert.fail("Test is failed, Error while placing order, Please check by placing order manually.");
 		}
 
-		
+
 		LOGGER.log(Level.INFO, "Verifying status code.");
 		Assert.assertEquals(response.getStatusCode(),422);
 		Assert.assertEquals(restapicalls.verifyMessageInResponse(response,"Order status is not ONGOING"), true);
