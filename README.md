@@ -6,7 +6,6 @@
 
 ## How to install & Run in eclipse 
 1. Please extract the project at your respective path.
-1. Go to Resources folder and add your application URL (Eg. http://localhost:51544).
 1. Open the project as Maven project in eclipse.
 1. Build the Project.
 1. Now run it as Testng or by right clicking on testng.xml.
@@ -14,9 +13,8 @@
 
 ## How to install & Run using command prompt
 1. Please extract the project at your desired path.
-1. Go to Resources folder and add your application URL (Eg. http://localhost:51544).
 1. Open the command prompt and go to the project path.
-1. Run the command "mvn clean install"(make sure your JAVA_HOME path is set Jave home directory)
+1. Run the command "mvn clean install test"
 1. All the automated test cases will be executed.
 
 Note: Test cases are available in TestCases.xls for your reference.
