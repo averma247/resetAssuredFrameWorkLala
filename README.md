@@ -2,7 +2,8 @@
 ## Pre-requisite
 1. Java above 1.5.
 1. Maven version above 3.0.
-1. Before executing the test, change the "existingOrderIDForDriveAway" with Orderid in Assiging state in config.properties file. Location of file is at "..\resetAssuredFrameWorkLala\src\test\resources\config.properties"
+1. Before executing the test, change the "existingOrderIDForDriveAway" with Orderid in Assiging state in config.properties file. Location of file is at "..\resetAssuredFrameWorkLala\src\test\resources\config.properties".
+1.  Before executing the test, change the "existingOrderID","cancelledOrderID", "ongoingOrderID", "completedOrderID" and "assignedOrderID"  with there respective state in config.properties file. Location of file is at "..\resetAssuredFrameWorkLala\src\test\resources\config.properties"
 
 ## How to install & Run in eclipse 
 1. Please extract the project at your respective path.
