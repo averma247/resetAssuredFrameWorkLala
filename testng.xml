@@ -6,7 +6,7 @@
 			<class name="com.lala.test.FetchOrderTest" />
 			<class name="com.lala.test.DriveToTakeOrderTest" />
 			<class name="com.lala.test.DriveToCompleteOrderTest" />
-			<class name="com.lala.test.CancelOrderTest" />
+			<!-- class name="com.lala.test.CancelOrderTest" /-->
 		</classes>
 	</test>
 </suite>
